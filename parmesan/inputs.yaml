@@ -1,0 +1,226 @@
+height:
+  show: true
+  input_info:
+    input_type: sliderInput
+    input_params:
+      label: Height
+      min: 1
+      max: 1000
+      value: 750
+      step: 1
+  update_param: value
+full_width:
+  show: true
+  input_info:
+    input_type: radioButtons
+    input_params:
+      label: Width
+      choices:
+        Full width:
+        - full_width
+        Fixed width:
+        - width
+      selected: full_width
+      inline: true
+  update_param: selected
+width:
+  show: true
+  depends_on:
+    full_width:
+      equals: width
+  input_info:
+    input_type: sliderInput
+    input_params:
+      label: Width
+      min: 1
+      max: 1000
+      value: 550
+      step: 1
+  update_param: value
+wrap:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Text wrap
+      value: true
+  update_param: value
+resizable:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Resizable columns
+      value: true
+  update_param: value
+outlined:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Table border
+      value: false
+  update_param: value
+bordered:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Table and columns borders
+      value: true
+  update_param: value
+borderless:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Rows borders
+      value: false
+  update_param: value
+striped:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Stripes
+      value: false
+  update_param: value
+compact:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Compactness
+      value: false
+  update_param: value
+highlight:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Highlight row on hover
+      value: false
+  update_param: value
+show_pagination:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Show pagination
+      value: true
+  update_param: value
+pagination:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Pagination
+      value: false
+  update_param: value
+show_page_info:
+  show: true
+  depends_on: pagination
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Show page info
+      value: true
+  update_param: value
+page_size_control:
+  show: true
+  depends_on: pagination
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Page size control
+      value: false
+  update_param: value
+page_type:
+  show: true
+  depends_on: pagination
+  input_info:
+    input_type: radioButtons
+    input_params:
+      label: Pagination type
+      choices:
+        Numbers:
+        - numbers
+        Simple:
+        - simple
+        Jump:
+        - jump
+      inline: true
+  update_param: select
+page_size:
+  show: true
+  depends_on: pagination
+  input_info:
+    input_type: sliderInput
+    input_params:
+      label: Rows per page
+      min: 0
+      max: 300
+      value: 20
+      step: 1
+  update_param: value
+sortable:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Sortable
+      value: false
+  update_param: value
+show_sort_icon:
+  show: true
+  depends_on: sortable
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Show icon when sorted
+      value: false
+  update_param: value
+show_sortable:
+  show: true
+  depends_on: show_sort_icon
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Show sortable arrows
+      value: false
+  update_param: value
+group_by:
+  show: true
+  depends_on: reactive__cols_nms
+  input_info:
+    input_type: selectizeInput
+    input_params:
+      label: Group by columns
+      choices: reactive__cols_nms
+      selected: " "
+      multiple: true
+  update_param: selected
+filterable:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Filterable
+      value: false
+  update_param: value
+searchable:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Searchable
+      value: false
+  update_param: value
+selection:
+  show: true
+  input_info:
+    input_type: checkboxInput
+    input_params:
+      label: Selectable
+      value: false
+  update_param: value
