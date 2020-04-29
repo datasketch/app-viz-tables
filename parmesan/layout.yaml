@@ -1,28 +1,36 @@
 Styles:
-- outlined
-- bordered
-- borderless
-- striped
-- compact
-- highlight
+  label: Styles
+  inputs:
+    - outlined
+    - bordered
+    - borderless
+    - striped
+    - compact
+    - highlight
 Size:
-- height
-- full_width
-#- width
-- wrap
-- resizable
-Sort, group, filter:
-- sortable
-#- show_sort_icon
-#- show_sortable
-- group_by
-- filterable
-- searchable
-- selection
+  label: Size
+  inputs:
+    - height
+    - full_width
+    - width
+    - wrap
+    - resizable
+sort_group_filter:
+  label: Sort, group, filter
+  inputs:
+    - sortable
+#    - show_sort_icon
+#    - show_sortable
+    - group_by
+    - filterable
+    - searchable
+    - selection
 Pagination:
-- pagination
-####- show_pagination
-#- show_page_info
-#- page_size
-#- page_size_control
-#- page_type
+  label: Pagination
+  inputs:
+#    - pagination
+    - show_pagination
+    - show_page_info
+    - page_size
+    - page_size_control
+    - page_type

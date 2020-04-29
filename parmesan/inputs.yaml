@@ -1,226 +1,191 @@
 height:
   show: true
-  input_info:
-    input_type: sliderInput
-    input_params:
-      label: Height
-      min: 1
-      max: 1000
-      value: 750
-      step: 1
-  update_param: value
+  input_type: sliderInput
+  input_params:
+    label: Height
+    min: 1
+    max: 1000
+    value: 750
+    step: 1  
 full_width:
   show: true
-  input_info:
-    input_type: radioButtons
-    input_params:
-      label: Width
-      choices:
-        Full width:
-        - full_width
-        Fixed width:
-        - width
-      selected: full_width
-      inline: true
-  update_param: selected
+  input_type: radioButtons
+  input_params:
+    label: Width
+    choices:
+      Full width:
+      - full_width
+      Fixed width:
+      - width
+    selected: full_width
+    inline: true
 width:
   show: true
-  depends_on:
+  show_if:
     full_width:
       equals: width
-  input_info:
-    input_type: sliderInput
-    input_params:
-      label: Width
-      min: 1
-      max: 1000
-      value: 550
-      step: 1
+  input_type: sliderInput
+  input_params:
+    label: Width
+    min: 1
+    max: 1000
+    value: 550
+    step: 1
   update_param: value
 wrap:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Text wrap
-      value: true
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Text wrap
+    value: true
 resizable:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Resizable columns
-      value: true
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Resizable columns
+    value: true
 outlined:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Table border
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Table border
+    value: false
 bordered:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Table and columns borders
-      value: true
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Table and columns borders
+    value: true
 borderless:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Rows borders
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Rows borders
+    value: false
 striped:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Stripes
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Stripes
+    value: false
 compact:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Compactness
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Compactness
+    value: false
 highlight:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Highlight row on hover
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Highlight row on hover
+    value: false
 show_pagination:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Show pagination
-      value: true
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Show pagination
+    value: true
 pagination:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Pagination
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Pagination
+    value: false
 show_page_info:
   show: true
-  depends_on: pagination
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Show page info
-      value: true
-  update_param: value
+  show_if:
+    show_pagination:
+      equals: true
+  input_type: checkboxInput
+  input_params:
+    label: Show page info
+    value: true
 page_size_control:
   show: true
-  depends_on: pagination
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Page size control
-      value: false
-  update_param: value
+  show_if:
+    show_pagination:
+      equals: true
+  input_type: checkboxInput
+  input_params:
+    label: Page size control
+    value: false
 page_type:
   show: true
-  depends_on: pagination
-  input_info:
-    input_type: radioButtons
-    input_params:
-      label: Pagination type
-      choices:
-        Numbers:
-        - numbers
-        Simple:
-        - simple
-        Jump:
-        - jump
-      inline: true
-  update_param: select
+  show_if: 
+    show_pagination:
+      equals: true
+  input_type: radioButtons
+  input_params:
+    label: Pagination type
+    choices:
+      Numbers:
+      - numbers
+      Simple:
+      - simple
+      Jump:
+      - jump
+    inline: true
 page_size:
   show: true
-  depends_on: pagination
-  input_info:
-    input_type: sliderInput
-    input_params:
-      label: Rows per page
-      min: 0
-      max: 300
-      value: 20
-      step: 1
-  update_param: value
+  show_if: 
+    show_pagination:
+      equals: true
+  input_type: sliderInput
+  input_params:
+    label: Rows per page
+    min: 0
+    max: 300
+    value: 20
+    step: 1
 sortable:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Sortable
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Sortable
+    value: false
 show_sort_icon:
   show: true
-  depends_on: sortable
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Show icon when sorted
-      value: false
-  update_param: value
+  show_if:
+    sortable:
+      equals: true
+  input_type: checkboxInput
+  input_params:
+    label: Show icon when sorted
+    value: false
 show_sortable:
   show: true
-  depends_on: show_sort_icon
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Show sortable arrows
-      value: false
-  update_param: value
+  show_if: 
+    show_sort_icon:
+      equals: true
+  input_type: checkboxInput
+  input_params:
+    label: Show sortable indicator
+    value: false
 group_by:
   show: true
-  depends_on: reactive__cols_nms
-  input_info:
-    input_type: selectizeInput
-    input_params:
-      label: Group by columns
-      choices: reactive__cols_nms
-      selected: " "
-      multiple: true
+  input_type: selectizeInput
+  input_params:
+    label: Group by columns
+    choices: reactive__cols_nms
+    selected: " "
+    multiple: true
   update_param: selected
 filterable:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Filterable
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Filterable
+    value: false
 searchable:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Searchable
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Searchable
+    value: false
 selection:
   show: true
-  input_info:
-    input_type: checkboxInput
-    input_params:
-      label: Selectable
-      value: false
-  update_param: value
+  input_type: checkboxInput
+  input_params:
+    label: Selectable
+    value: false
