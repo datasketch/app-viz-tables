@@ -12,7 +12,8 @@ library(reactable)
 # Arreglar código
 # Problema con parámetro width que depende de full width
 # Mirar los parámetros de sortable...
-# TODAS: títulos de las secciones (estílos), nombres secciónes, color input (título, estílos)
+# TODAS: títulos de las secciones (estílos), nombres secciónes, color input (título, estílos),
+# unidades (width, height pixeles)
 
 ui <- panelsPage(panel(title = "Upload Data", 
                        width = 200,
