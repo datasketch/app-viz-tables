@@ -1,6 +1,9 @@
 Styles:
   label: Styles
   inputs:
+    - font_family
+    - font_size
+    - color
     - outlined
     - bordered
     - borderless
@@ -31,6 +34,6 @@ Pagination:
 #    - pagination
     - show_pagination
     - show_page_info
-    - page_size
     - page_size_control
+    - page_size
     - page_type

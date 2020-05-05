@@ -1,10 +1,35 @@
-height:
+font_family:
+  show: true
+  input_type: selectizeInput
+  input_params:
+    label: Font family
+    choices:
+      - Liberation Sans Narrow
+      - Sawasdee
+      - Segoe UI
+    selected: Liberation Sans Narrow
+font_size:
   show: true
   input_type: sliderInput
   input_params:
+    label: Font size
+    min: 1
+    max: 40
+    value: 17 
+    step: 1
+color:
+  show: true
+  input_type: colorPalette
+  input_params:
+    colors:
+      - green 
+height:
+  show: true
+  input_type: numericInput
+  input_params:
     label: Height
     min: 1
-    max: 1000
+    max: 900
     value: 750
     step: 1  
 full_width:
@@ -24,11 +49,11 @@ width:
   show_if:
     full_width:
       equals: width
-  input_type: sliderInput
+  input_type: numericInput
   input_params:
     label: Width
     min: 1
-    max: 1000
+    max: 900
     value: 550
     step: 1
   update_param: value
@@ -52,10 +77,13 @@ outlined:
     value: false
 bordered:
   show: true
+  show_if:
+    outlined:
+      equals: true
   input_type: checkboxInput
   input_params:
-    label: Table and columns borders
-    value: true
+    label: Columns borders
+    value: false
 borderless:
   show: true
   input_type: checkboxInput
@@ -84,7 +112,7 @@ show_pagination:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Show pagination
+    label: Pagination
     value: true
 pagination:
   show: true
@@ -109,7 +137,7 @@ page_size_control:
   input_type: checkboxInput
   input_params:
     label: Page size control
-    value: false
+    value: true
 page_type:
   show: true
   show_if: 
@@ -131,7 +159,7 @@ page_size:
   show_if: 
     show_pagination:
       equals: true
-  input_type: sliderInput
+  input_type: numericInput
   input_params:
     label: Rows per page
     min: 0
@@ -167,7 +195,7 @@ group_by:
   input_type: selectizeInput
   input_params:
     label: Group by columns
-    choices: reactive__cols_nms
+    choices: cols_nms()
     selected: " "
     multiple: true
   update_param: selected
