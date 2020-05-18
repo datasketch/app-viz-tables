@@ -1,0 +1,45 @@
+upload_data: Upload data
+dataset: Dataset
+options: Options
+viz: Viz
+sample: Sample data
+sample_lb: Select a sample data
+paste: Copy & paste
+paste_pl: Copy and paste it here
+upload: CSX/XLS upload  
+upload_lb: Choose CSV/XLS file
+upload_bt_lb: Browse...
+upload_pl: No file selected
+google: Google sheets
+google_sh_lb: Data from Google Sheet
+google_sh_pl: https://docs.google.com/spreadsheets/...
+google_sh_pg_lb: Sheet
+styles: Styles
+size: Sizes
+sort_group_filter: Sort, group, filter
+pagination: Pagination
+font_family: Font family
+font_size: Font size
+color: Font color
+outlined: Table border
+bordered: Columns borders
+borderless: Rows borders
+striped: Stripes
+compact: Compactness
+highlight: Highlight row on hover
+height: Height
+full_width: Width
+width: Width
+wrap: Text wrap
+resizable: Resizable columns
+sortable: Sortable
+group_by: Group by columns
+filterable: Filterable
+searchable: Searchable
+selection: Selectable
+show_pagination: Pagination
+show_page_info: Show page info
+page_size_control: Page size control
+page_size: Rows per page
+page_type: Pagination type
+download_table: Download tabla

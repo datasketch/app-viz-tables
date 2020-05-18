@@ -1,0 +1,45 @@
+upload_data: Subir datos
+dataset: Datos
+options: Opciones
+viz: Vizualización
+sample: Datos de muestra
+sample_lb: Selecciona unos datos de muestra
+paste: Copiar & pegar
+paste_pl: Copia y pega aquí
+upload: Subir CSX/XLS
+upload_lb: Escoje archivo CSV/XLS
+upload_bt_lb: Examinar...
+upload_pl: Ningún archivo seleccionado
+google: Google sheets
+google_sh_lb: Datos desde Google Sheet
+google_sh_pl: https://docs.google.com/spreadsheets/...
+google_sh_pg_lb: Hoja
+styles: Estilos
+size: Tamaños
+sort_group_filter: Ordenar, agrupar, filtrar
+pagination:  Paginación
+font_family: Fuente texto
+font_size: Tamaño texto
+color: Color texto
+outlined: Borde de tabla
+bordered: Borde de columna
+borderless: Borde de filas
+striped: Líneas
+compact: Compacto
+highlight: Destacar con el mouse
+height: Alto
+full_width: Ancho
+width: Ancho
+wrap: Ajuste de texto
+resizable: Columnas ajustables
+sortable: Agregar orden
+group_by: Agrupar por columnas
+filterable: Agregar filtro
+searchable: Agregar búsqueda
+selection: Seleccionable
+show_pagination: Paginación
+show_page_info: Mostrar información de página
+page_size_control: Mostrar controls de página
+page_size: Número de filas por página
+page_type: Tipo de paginación
+download_table: Descargar tabla

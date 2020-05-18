@@ -1,5 +1,5 @@
-Styles:
-  label: Styles
+styles:
+  label: styles
   inputs:
     - font_family
     - font_size
@@ -10,8 +10,8 @@ Styles:
     - striped
     - compact
     - highlight
-Size:
-  label: Size
+size:
+  label: size
   inputs:
     - height
     - full_width
@@ -19,7 +19,7 @@ Size:
     - wrap
     - resizable
 sort_group_filter:
-  label: Sort, group, filter
+  label: sort_group_filter
   inputs:
     - sortable
 #    - show_sort_icon
@@ -28,8 +28,8 @@ sort_group_filter:
     - filterable
     - searchable
     - selection
-Pagination:
-  label: Pagination
+pagination:
+  label: pagination
   inputs:
 #    - pagination
     - show_pagination

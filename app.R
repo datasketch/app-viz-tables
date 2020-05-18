@@ -1,6 +1,7 @@
 library(shinypanels)
 library(parmesan)
 library(shinyinvoer)
+library(shi18ny)
 library(dsmodules)
 library(htmlwidgets)
 library(hotr)
@@ -15,44 +16,78 @@ library(reactable)
 # TODAS: títulos de las secciones (estílos), nombres secciónes, color input (título, estílos),
 # unidades (width, height pixeles)
 
-ui <- panelsPage(panel(title = "Upload Data", 
+ui <- panelsPage(useShi18ny(),
+                 panel(title = ui_("upload_data"),
                        width = 200,
-                       body = tableInputUI("initial_data",
-                                           choices = list("Sample data" = "sampleData",
-                                                          "Copy & paste" = "pasted",
-                                                          "CSV/XLS Upload" = "fileUpload",
-                                                          "Google sheets" = "googleSheets"),
-                                           selected = "sampleData")),
-                 panel(title = "Dataset",
+                       body = uiOutput("table_input")),
+                 panel(title = ui_("dataset"),
                        width = 300,
                        body = uiOutput("data_preview")),
-                 panel(title = "Options",
+                 panel(title = ui_("options"),
                        width = 250,
+                       color = "chardonnay",
                        body = uiOutput("controls")),
-                 panel(title = "Viz",
+                 panel(title = ui_("viz"),
+                       color = "chardonnay",
                        can_collapse = FALSE,
-                       body = div(reactableOutput("result"),
+                       body = div(langSelectorInput("lang", position = "fixed"),
+                                  reactableOutput("result"),
                                   shinypanels::modal(id = "test",
-                                                     title = "Download table",
-                                                     dsmodules::downloadHtmlwidgetUI("download_data_button", "Download HTML"))),
+                                                     title = ui_("download_table"),
+                                                     # dsmodules::downloadHtmlwidgetUI("download_data_button", "Download HTML"))),
+                                                     uiOutput("modal"))),
                        footer = shinypanels::modalButton(label = "Download table", modal_id = "test")))
 
 
 server <- function(input, output, session) {
   
+  i18n <- list(defaultLang = "en", availableLangs = c("es", "en", "pt"))
+  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = TRUE)
+  observeEvent(lang(), {
+    uiLangUpdate(input$shi18ny_ui_classes, lang())
+  })  
+  
+  output$table_input <- renderUI({
+    choices <- c("sampleData", "pasted", "fileUpload", "googleSheets")
+    names(choices) <- i_(c("sample", "paste", "upload", "google"), lang = lang())
+    tableInputUI("initial_data",
+                 choices = choices,
+                 # selected is important for inputs not be re-initialized
+                 selected = ifelse(is.null(input$`initial_data-tableInput`), "sampleData", input$`initial_data-tableInput`))
+  })
+  
   path <- "parmesan"
   parmesan <- parmesan_load(path)
   parmesan_input <- parmesan_watch(input, parmesan)
   parmesan_alert(parmesan, env = environment())
+  parmesan_lang <- reactive({i_(parmesan, lang(), keys = c("label", "choices"))})
   output_parmesan("controls", 
-                  parmesan = parmesan,
+                  parmesan = parmesan_lang,
                   input = input,
                   output = output)
+  # dsmodules::downloadHtmlwidgetUI("download_data_button", "Download HTML"))),
   
-  inputData <- callModule(tableInput, 
+  output$modal <- renderUI({
+    dw <- i_("download", lang())#Download HTML
+    downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
+  })
+  
+  labels <- reactive({
+    list(sampleLabel = i_("sample_lb", lang()), 
+         sampleFile = list("Iris" = "data/sampleData/iris.csv",
+                           "Emission per capita C02" = "data/sampleData/emisiones_c02.csv"),
+         pasteLabel = i_("paste", lang()), pasteValue = "", pastePlaceholder = i_("paste_pl", lang()), pasteRows = 5, 
+         uploadLabel = i_("upload_lb", lang()), uploadButtonLabel = i_("upload_bt_lb", lang()), uploadPlaceholder = i_("upload_pl", lang()),
+         googleSheetLabel = i_("google_sh_lb", lang()), googleSheetValue = "", googleSheetPlaceholder = i_("google_sh_pl", lang()),
+         googleSheetPageLabel = i_("google_sh_pg_lb", lang()))
+  })
+  
+  
+  inputData <- eventReactive(labels(), {
+    do.call(callModule, c(tableInput,
                           "initial_data",
-                          sampleFile = list("Emission per capita C02" = "data/sampleData/emisiones_c02.csv", 
-                                            "South America population" = "data/sampleData/poblacion.csv"))
+                          labels()))
+  })
   
   output$data_preview <- renderUI({
     req(inputData())
@@ -111,7 +146,7 @@ server <- function(input, output, session) {
               searchable = input$searchable,
               selection = sl,
 
-              pageSizeOptions = seq(5, nrow(inputData()), 5),
+              pageSizeOptions = seq(5, nrow(dt()), 5),
               
               style = st
               )

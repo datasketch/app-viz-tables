@@ -2,7 +2,7 @@ font_family:
   show: true
   input_type: selectizeInput
   input_params:
-    label: Font family
+    label: font_family
     choices:
       - Liberation Sans Narrow
       - Sawasdee
@@ -12,22 +12,23 @@ font_size:
   show: true
   input_type: sliderInput
   input_params:
-    label: Font size
+    label: font_size
     min: 1
     max: 40
     value: 17 
     step: 1
 color:
   show: true
-  input_type: colorPalette
+  input_type: colorPaletteInput
   input_params:
+    label: color
     colors:
       - green 
 height:
   show: true
   input_type: numericInput
   input_params:
-    label: Height
+    label: height
     min: 1
     max: 900
     value: 750
@@ -36,7 +37,7 @@ full_width:
   show: true
   input_type: radioButtons
   input_params:
-    label: Width
+    label: full_width
     choices:
       Full width:
       - full_width
@@ -51,7 +52,7 @@ width:
       equals: width
   input_type: numericInput
   input_params:
-    label: Width
+    label: width
     min: 1
     max: 900
     value: 550
@@ -61,7 +62,7 @@ wrap:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Text wrap
+    label: wrap
     value: true
 resizable:
   show: true
@@ -73,7 +74,7 @@ outlined:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Table border
+    label: outlined
     value: false
 bordered:
   show: true
@@ -82,43 +83,43 @@ bordered:
       equals: true
   input_type: checkboxInput
   input_params:
-    label: Columns borders
+    label: bordered
     value: false
 borderless:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Rows borders
+    label: borderless
     value: false
 striped:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Stripes
+    label: striped
     value: false
 compact:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Compactness
+    label: compact
     value: false
 highlight:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Highlight row on hover
+    label: highlight
     value: false
 show_pagination:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Pagination
+    label: show_pagination
     value: true
 pagination:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Pagination
+    label: pagination
     value: false
 show_page_info:
   show: true
@@ -127,7 +128,7 @@ show_page_info:
       equals: true
   input_type: checkboxInput
   input_params:
-    label: Show page info
+    label: show_page_info
     value: true
 page_size_control:
   show: true
@@ -136,7 +137,7 @@ page_size_control:
       equals: true
   input_type: checkboxInput
   input_params:
-    label: Page size control
+    label: page_size_control
     value: true
 page_type:
   show: true
@@ -145,7 +146,7 @@ page_type:
       equals: true
   input_type: radioButtons
   input_params:
-    label: Pagination type
+    label: page_type
     choices:
       Numbers:
       - numbers
@@ -161,7 +162,7 @@ page_size:
       equals: true
   input_type: numericInput
   input_params:
-    label: Rows per page
+    label: page_size
     min: 0
     max: 300
     value: 20
@@ -170,7 +171,7 @@ sortable:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Sortable
+    label: sortable
     value: false
 show_sort_icon:
   show: true
@@ -179,7 +180,7 @@ show_sort_icon:
       equals: true
   input_type: checkboxInput
   input_params:
-    label: Show icon when sorted
+    label: show_sort_icon
     value: false
 show_sortable:
   show: true
@@ -188,13 +189,13 @@ show_sortable:
       equals: true
   input_type: checkboxInput
   input_params:
-    label: Show sortable indicator
+    label: show_sortable
     value: false
 group_by:
   show: true
   input_type: selectizeInput
   input_params:
-    label: Group by columns
+    label: group_by
     choices: cols_nms()
     selected: " "
     multiple: true
@@ -203,17 +204,17 @@ filterable:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Filterable
+    label: filterable
     value: false
 searchable:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Searchable
+    label: searchable
     value: false
 selection:
   show: true
   input_type: checkboxInput
   input_params:
-    label: Selectable
+    label: selection
     value: false
