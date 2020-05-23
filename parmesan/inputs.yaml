@@ -42,17 +42,17 @@ full_width:
       Full width:
       - full_width
       Fixed width:
-      - width
+      - width_le
     selected: full_width
     inline: true
-width:
+width_l:
   show: true
   show_if:
     full_width:
-      equals: width
+      equals: width_le
   input_type: numericInput
   input_params:
-    label: width
+    label: width_sl
     min: 1
     max: 900
     value: 550
@@ -200,6 +200,9 @@ group_by:
     selected: " "
     multiple: true
   update_param: selected
+  input_info:
+    icon: info-circle
+    text: info_gb
 filterable:
   show: true
   input_type: checkboxInput

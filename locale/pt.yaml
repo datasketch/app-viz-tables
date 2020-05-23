@@ -14,7 +14,8 @@ google: Google sheets
 google_sh_lb: Dados de Google Sheet
 google_sh_pl: https://docs.google.com/spreadsheets/...
 google_sh_pg_lb: Folha
-styles: Estilos
+text: Texto
+borders: Bordas
 size: Tamanho
 sort_group_filter: Organizar, agrupar, filtrar
 pagination: Paginação
@@ -28,8 +29,7 @@ striped: Linhas
 compact: Compact
 highlight: Destaque com o mouse
 height: Alta
-full_width: Largura
-width: Largura
+width_sl: Largura
 wrap: Quebra de texto
 resizable: Colunas ajustáveis
 sortable: Adicionar pedido
@@ -43,3 +43,9 @@ page_size_control: Mostrar controles da página
 page_size: Número de linhas por página
 page_type: Tipo de paginação
 download_table: Baixar tabla
+numbers: Números
+simple: Simples
+jump: Salto
+width_le: Largura fixa
+full_width: Largura completa
+info_gb: Agrupar tabela por categorias das colunas escolhidas

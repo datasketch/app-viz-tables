@@ -2,6 +2,7 @@ library(shinypanels)
 library(parmesan)
 library(shinyinvoer)
 library(shi18ny)
+library(V8)
 library(dsmodules)
 library(htmlwidgets)
 library(hotr)
@@ -9,11 +10,8 @@ library(tidyverse)
 library(homodatum)
 library(reactable)
 
-# Internacionalización
-# Arreglar código
 # Problema con parámetro width que depende de full width
 # Mirar los parámetros de sortable...
-# TODAS: títulos de las secciones (estílos), nombres secciónes, color input (título, estílos),
 # unidades (width, height pixeles)
 
 ui <- panelsPage(useShi18ny(),
@@ -32,11 +30,10 @@ ui <- panelsPage(useShi18ny(),
                        can_collapse = FALSE,
                        body = div(langSelectorInput("lang", position = "fixed"),
                                   reactableOutput("result"),
-                                  shinypanels::modal(id = "test",
+                                  shinypanels::modal(id = "download",
                                                      title = ui_("download_table"),
-                                                     # dsmodules::downloadHtmlwidgetUI("download_data_button", "Download HTML"))),
                                                      uiOutput("modal"))),
-                       footer = shinypanels::modalButton(label = "Download table", modal_id = "test")))
+                       footer = shinypanels::modalButton(label = "Download table", modal_id = "download")))
 
 
 server <- function(input, output, session) {
@@ -60,12 +57,12 @@ server <- function(input, output, session) {
   parmesan <- parmesan_load(path)
   parmesan_input <- parmesan_watch(input, parmesan)
   parmesan_alert(parmesan, env = environment())
-  parmesan_lang <- reactive({i_(parmesan, lang(), keys = c("label", "choices"))})
+  parmesan_lang <- reactive({i_(parmesan, lang(), keys = c("label", "choices", "text"))})
   output_parmesan("controls", 
                   parmesan = parmesan_lang,
                   input = input,
-                  output = output)
-  # dsmodules::downloadHtmlwidgetUI("download_data_button", "Download HTML"))),
+                  output = output,
+                  env = environment())
   
   output$modal <- renderUI({
     dw <- i_("download", lang())#Download HTML
@@ -87,6 +84,15 @@ server <- function(input, output, session) {
     do.call(callModule, c(tableInput,
                           "initial_data",
                           labels()))
+  })
+  
+  observeEvent(lang(), {
+    ch0 <- as.character(parmesan$pagination$inputs[[5]]$input_params$choices)
+    names(ch0) <- i_(ch0, lang())
+    ch1 <- as.character(parmesan$size$inputs[[2]]$input_params$choices)
+    names(ch1) <- i_(ch1, lang())
+    updateRadioButtons(session, "page_type", choices = ch0, inline = TRUE, selected = input$page_type)
+    updateRadioButtons(session, "full_width", choices = ch1, inline = TRUE, selected = input$full_width)
   })
   
   output$data_preview <- renderUI({
@@ -117,7 +123,7 @@ server <- function(input, output, session) {
               
               height = input$height,
               fullWidth = ifelse(input$full_width == "full_width", TRUE, FALSE),
-              width = ifelse(input$full_width == "full_width", "auto", input$width),
+              width = ifelse(input$full_width == "full_width", "auto", input$width_l),
               wrap = input$wrap,
               resizable = input$resizable,
 

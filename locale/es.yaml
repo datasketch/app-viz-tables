@@ -3,7 +3,7 @@ dataset: Datos
 options: Opciones
 viz: Vizualización
 sample: Datos de muestra
-sample_lb: Selecciona unos datos de muestra
+sample_lb: Selecciona datos de muestra
 paste: Copiar & pegar
 paste_pl: Copia y pega aquí
 upload: Subir CSX/XLS
@@ -14,7 +14,8 @@ google: Google sheets
 google_sh_lb: Datos desde Google Sheet
 google_sh_pl: https://docs.google.com/spreadsheets/...
 google_sh_pg_lb: Hoja
-styles: Estilos
+text: Texto
+borders: Bordes
 size: Tamaños
 sort_group_filter: Ordenar, agrupar, filtrar
 pagination:  Paginación
@@ -28,9 +29,8 @@ striped: Líneas
 compact: Compacto
 highlight: Destacar con el mouse
 height: Alto
-full_width: Ancho
-width: Ancho
-wrap: Ajuste de texto
+width_sl: Ancho
+wrap: Salto de texto
 resizable: Columnas ajustables
 sortable: Agregar orden
 group_by: Agrupar por columnas
@@ -43,3 +43,9 @@ page_size_control: Mostrar controls de página
 page_size: Número de filas por página
 page_type: Tipo de paginación
 download_table: Descargar tabla
+numbers: Números
+simple: Simple
+jump: Salto
+width_le: Ancho fijo
+full_width: Ancho completo
+info_gb: Agrupar tabla por las categorías de las columnas escogidas
