@@ -1,9 +1,13 @@
 upload_data: Subir dada
 dataset: Dados
 options: Opções
-viz: Visualização
+viz: Tabla
 sample: Dados de amostra
 sample_lb: Seleccionar dados de amostra
+sample_ch_0: "data/sampleData/life_expectancy_100_y_pt.csv"
+sample_ch_1: "data/sampleData/emisiones_c02_pt.csv"
+sample_ch_nm_0: Expectativa de vida (Gapminder)
+sample_ch_nm_1: Emissões de CO2 per capita
 paste: Copiar e colar
 paste_pl: Copie e cole aqui
 upload: Subir CSX/XLS
@@ -11,7 +15,7 @@ upload_lb: Escolher arquivo CSV/XLS
 upload_bt_lb: Examinar...
 upload_pl: Nenhum arquivo selecionado
 google: Google sheets
-google_sh_lb: Dados de Google Sheet
+google_sh_lb: Dados de Google sheet
 google_sh_pl: https://docs.google.com/spreadsheets/...
 google_sh_pg_lb: Folha
 text: Texto
@@ -23,8 +27,8 @@ font_family: Fonte do texto
 font_size: Tamanho do texto
 color: Cor texto
 outlined: Borda da tabela
-bordered: Borda da coluna
-borderless: Borda da linha
+bordered: Bordas colunas
+borderless: Bordas linhas
 striped: Linhas
 compact: Compact
 highlight: Destaque com o mouse
@@ -32,14 +36,15 @@ height: Alta
 width_sl: Largura
 wrap: Quebra de texto
 resizable: Colunas ajustáveis
-sortable: Adicionar pedido
+sortable: Adicionar ordem
+show_sort_icon: Mostrar icone ordem
 group_by: Agrupar por colunas
 filterable: Adicionar filtro
 searchable: Adicionar pesquisa
 selection: Selecionável
 show_pagination: Paginação
 show_page_info: Mostrar informações da página
-page_size_control: Mostrar controles da página
+page_size_control: Controle linhas por página
 page_size: Número de linhas por página
 page_type: Tipo de paginação
 download_table: Baixar tabla

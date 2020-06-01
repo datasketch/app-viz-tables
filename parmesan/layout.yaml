@@ -1,19 +1,19 @@
-sort_group_filter:
-  label: sort_group_filter
-  inputs:
-    - sortable
-#    - show_sort_icon
-#    - show_sortable
-    - group_by
-    - filterable
-    - searchable
-    - selection
 text:
   label: text
   inputs:
     - font_family
     - color
     - font_size
+sort_group_filter:
+  label: sort_group_filter
+  inputs:
+    - searchable
+    - filterable
+    - selection
+    - sortable
+#    - show_sort_icon
+#    - show_sortable
+    - group_by
 borders:
   label: borders
   inputs:  
@@ -21,8 +21,8 @@ borders:
     - bordered
     - borderless
     - striped
-    - compact
     - highlight
+    - compact
 pagination:
   label: pagination
   inputs:
@@ -35,8 +35,8 @@ pagination:
 size:
   label: size
   inputs:
-    - height
-    - full_width
-    - width_l
     - wrap
     - resizable
+    - full_width
+    - width_l
+    - height

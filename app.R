@@ -10,8 +10,7 @@ library(tidyverse)
 library(homodatum)
 library(reactable)
 
-# Problema con parámetro width que depende de full width
-# Mirar los parámetros de sortable...
+# bases de datos en idiomas
 # unidades (width, height pixeles)
 
 ui <- panelsPage(useShi18ny(),
@@ -38,11 +37,9 @@ ui <- panelsPage(useShi18ny(),
 
 server <- function(input, output, session) {
   
-  i18n <- list(defaultLang = "en", availableLangs = c("es", "en", "pt"))
-  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = TRUE)
-  observeEvent(lang(), {
-    uiLangUpdate(input$shi18ny_ui_classes, lang())
-  })  
+  i18n <- list(defaultLang = "en", availableLangs = c("es", "en", "pt_BR"))
+  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = FALSE)
+  observeEvent(lang(), {uiLangUpdate(input$shi18ny_ui_classes, lang())})  
   
   output$table_input <- renderUI({
     choices <- c("sampleData", "pasted", "fileUpload", "googleSheets")
@@ -51,6 +48,62 @@ server <- function(input, output, session) {
                  choices = choices,
                  # selected is important for inputs not be re-initialized
                  selected = ifelse(is.null(input$`initial_data-tableInput`), "sampleData", input$`initial_data-tableInput`))
+  })
+  
+  labels <- reactive({
+    sm_f <- i_(c("sample_ch_0", "sample_ch_1"), lang())
+    names(sm_f) <- i_(c("sample_ch_nm_0", "sample_ch_nm_1"), lang())
+    
+    list(sampleLabel = i_("sample_lb", lang()), 
+         sampleFile = sm_f,
+         
+         pasteLabel = i_("paste", lang()),
+         pasteValue = "", 
+         pastePlaceholder = i_("paste_pl", lang()), 
+         pasteRows = 5, 
+         
+         uploadLabel = i_("upload_lb", lang()), 
+         uploadButtonLabel = i_("upload_bt_lb", lang()),
+         uploadPlaceholder = i_("upload_pl", lang()),
+         
+         googleSheetLabel = i_("google_sh_lb", lang()), 
+         googleSheetValue = "",
+         googleSheetPlaceholder = i_("google_sh_pl", lang()),
+         googleSheetPageLabel = i_("google_sh_pg_lb", lang()))
+  })
+  
+  inputData <- eventReactive(list(labels(), input$`initial_data-tableInput`), {
+    do.call(callModule, c(tableInput,
+                          "initial_data",
+                          labels()))
+  })
+  
+  observe({
+    
+    # observeEvent(list(input$`initial_data-tableInput`, lang()), {
+    # if (!is.null)
+    # req(inputData())
+    # print("aa")
+    # print(inputData())
+    # print(inputData()())
+    # assign("a0", inputData()(), envir = globalenv())
+    # if (!is.null(names(inputData()()))) {
+    # if (input$`initial_data-tableInput` == "sampleData") {
+    # print("SFG")
+    #   ln <- which(lang() == c("en", "es", "pt_BR"))
+    #   l0 <- list("data/sampleData/life_expectancy_100_y.csv" = list(c("country", "year", "life_expectancy"),
+    #                                                                 c("país", "año", "expectativa_vida"),
+    #                                                                 c("país", "ano", "expectativa_vida")),
+    #              "data/sampleData/emisiones_c02.csv" = list(c("Income level countries of the world", "Year", "Emission per capita C02"),
+    #                                                         c("Nivel de ingresos países del mundo", "Año", "Emisiones CO2 per capita"),
+    #                                                         c("Nível de renda países do mundo", "Ano", "Emissões CO2 per capita")))
+    #   print(l0[[input$`initial_data-inputDataSample`]][[ln]])
+    #   names(inputData()()) <- l0[[input$`initial_data-inputDataSample`]][[ln]]
+    # }
+    #   
+    # }
+    # req(input$`initial_data-tableInput`)
+    # req(input$`initial_data-inputDataSample`)
   })
   
   path <- "parmesan"
@@ -64,35 +117,13 @@ server <- function(input, output, session) {
                   output = output,
                   env = environment())
   
-  output$modal <- renderUI({
-    dw <- i_("download", lang())#Download HTML
-    downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
-  })
-  
-  labels <- reactive({
-    list(sampleLabel = i_("sample_lb", lang()), 
-         sampleFile = list("Iris" = "data/sampleData/iris.csv",
-                           "Emission per capita C02" = "data/sampleData/emisiones_c02.csv"),
-         pasteLabel = i_("paste", lang()), pasteValue = "", pastePlaceholder = i_("paste_pl", lang()), pasteRows = 5, 
-         uploadLabel = i_("upload_lb", lang()), uploadButtonLabel = i_("upload_bt_lb", lang()), uploadPlaceholder = i_("upload_pl", lang()),
-         googleSheetLabel = i_("google_sh_lb", lang()), googleSheetValue = "", googleSheetPlaceholder = i_("google_sh_pl", lang()),
-         googleSheetPageLabel = i_("google_sh_pg_lb", lang()))
-  })
-  
-  
-  inputData <- eventReactive(labels(), {
-    do.call(callModule, c(tableInput,
-                          "initial_data",
-                          labels()))
-  })
-  
   observeEvent(lang(), {
     ch0 <- as.character(parmesan$pagination$inputs[[5]]$input_params$choices)
     names(ch0) <- i_(ch0, lang())
-    ch1 <- as.character(parmesan$size$inputs[[2]]$input_params$choices)
+    ch1 <- as.character(parmesan$size$inputs[[3]]$input_params$choices)
     names(ch1) <- i_(ch1, lang())
     updateRadioButtons(session, "page_type", choices = ch0, inline = TRUE, selected = input$page_type)
-    updateRadioButtons(session, "full_width", choices = ch1, inline = TRUE, selected = input$full_width)
+    updateRadioButtons(session, "full_width", choices = ch1, selected = input$full_width)
   })
   
   output$data_preview <- renderUI({
@@ -112,13 +143,12 @@ server <- function(input, output, session) {
   
   rctbl <- reactive({
     req(dt())
-    
     sl <- NULL
     if (sum(input$selection) > 0) 
       sl <- "multiple"
     
-    st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")
-      
+    st <- paste0("color: #", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
+    
     reactable(dt(),
               
               height = input$height,
@@ -126,24 +156,23 @@ server <- function(input, output, session) {
               width = ifelse(input$full_width == "full_width", "auto", input$width_l),
               wrap = input$wrap,
               resizable = input$resizable,
-
+              
               outlined = input$outlined,
               bordered = ifelse(!input$outlined, FALSE, input$bordered),
               borderless = !input$borderless,
               striped = input$striped,
               compact = input$compact,
               highlight = input$highlight,
-
+              
               pagination = input$show_pagination,
               showPagination = input$show_pagination,
               showPageInfo = ifelse(input$show_pagination, input$show_page_info, FALSE),
               showPageSizeOptions = ifelse(input$show_pagination, input$page_size_control, FALSE),
               paginationType = input$page_type,
               defaultPageSize = input$page_size,
-
-              # sortable = input$sortable,
-              # showSortIcon = input$sortable,
-              # showSortable =  input$sortable,
+              
+              # showSortIcon = ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
+              # showSortable =  ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
               sortable = input$sortable,
               showSortIcon = TRUE,
               showSortable =  TRUE,
@@ -151,11 +180,11 @@ server <- function(input, output, session) {
               filterable = input$filterable,
               searchable = input$searchable,
               selection = sl,
-
+              
               pageSizeOptions = seq(5, nrow(dt()), 5),
               
               style = st
-              )
+    )
   })
   
   # renderizando reactable
@@ -164,10 +193,15 @@ server <- function(input, output, session) {
     req(rctbl())
     rctbl()
   })
-
+  
+  output$modal <- renderUI({
+    dw <- i_("download", lang())#Download HTML
+    downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
+  })
+  
   # descargas
   callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()), name = "table")
-    
+  
 }
 
 
