@@ -10,7 +10,6 @@ library(tidyverse)
 library(homodatum)
 library(reactable)
 
-# bases de datos en idiomas
 # unidades (width, height pixeles)
 
 ui <- panelsPage(useShi18ny(),
