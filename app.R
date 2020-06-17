@@ -9,6 +9,7 @@ library(hotr)
 library(tidyverse)
 library(homodatum)
 library(reactable)
+library(rio)
 
 # unidades (width, height pixeles)
 
@@ -77,6 +78,11 @@ server <- function(input, output, session) {
                           labels()))
   })
   
+  output$data_preview <- renderUI({
+    req(inputData())
+    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = 470), enableCTypes = FALSE))
+  })
+  
   observe({
     
     # observeEvent(list(input$`initial_data-tableInput`, lang()), {
@@ -123,11 +129,6 @@ server <- function(input, output, session) {
     names(ch1) <- i_(ch1, lang())
     updateRadioButtons(session, "page_type", choices = ch0, inline = TRUE, selected = input$page_type)
     updateRadioButtons(session, "full_width", choices = ch1, selected = input$full_width)
-  })
-  
-  output$data_preview <- renderUI({
-    req(inputData())
-    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = 470), enableCTypes = FALSE))
   })
   
   dt <- reactive({
