@@ -48,6 +48,7 @@ page_size_control: Page size control
 page_size: Rows per page
 page_type: Pagination type
 download_table: Download table
+download: Download
 numbers: Numbers
 simple: Simple
 jump: Jump

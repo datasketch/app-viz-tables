@@ -24,6 +24,7 @@ color:
     label: color
     colors:
       - "#414141" 
+    max_colors: 1
 height:
   show: true
   input_type: numericInput
@@ -203,7 +204,6 @@ group_by:
   input_info:
     icon: info-circle
     text: info_gb
-    icon-align: right
 filterable:
   show: true
   input_type: checkboxInput

@@ -4,12 +4,12 @@ library(shinyinvoer)
 library(shi18ny)
 library(V8)
 library(dsmodules)
-library(htmlwidgets)
+# library(htmlwidgets)
 library(hotr)
-library(tidyverse)
-library(homodatum)
+library(purrr)
+# library(homodatum)
 library(reactable)
-library(rio)
+library(shinycustomloader)
 
 # unidades (width, height pixeles)
 
@@ -28,11 +28,10 @@ ui <- panelsPage(useShi18ny(),
                        color = "chardonnay",
                        can_collapse = FALSE,
                        body = div(langSelectorInput("lang", position = "fixed"),
-                                  reactableOutput("result"),
-                                  shinypanels::modal(id = "download",
-                                                     title = ui_("download_table"),
-                                                     uiOutput("modal"))),
-                       footer = shinypanels::modalButton(label = "Download table", modal_id = "download")))
+                                  uiOutput("download"),
+                                  br(),
+                                  withLoader(reactableOutput("result"), type = "image", loader = "loading_gris.gif"))))
+                 
 
 
 server <- function(input, output, session) {
@@ -80,35 +79,7 @@ server <- function(input, output, session) {
   
   output$data_preview <- renderUI({
     req(inputData())
-    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = 470), enableCTypes = FALSE))
-  })
-  
-  observe({
-    
-    # observeEvent(list(input$`initial_data-tableInput`, lang()), {
-    # if (!is.null)
-    # req(inputData())
-    # print("aa")
-    # print(inputData())
-    # print(inputData()())
-    # assign("a0", inputData()(), envir = globalenv())
-    # if (!is.null(names(inputData()()))) {
-    # if (input$`initial_data-tableInput` == "sampleData") {
-    # print("SFG")
-    #   ln <- which(lang() == c("en", "es", "pt_BR"))
-    #   l0 <- list("data/sampleData/life_expectancy_100_y.csv" = list(c("country", "year", "life_expectancy"),
-    #                                                                 c("país", "año", "expectativa_vida"),
-    #                                                                 c("país", "ano", "expectativa_vida")),
-    #              "data/sampleData/emisiones_c02.csv" = list(c("Income level countries of the world", "Year", "Emission per capita C02"),
-    #                                                         c("Nivel de ingresos países del mundo", "Año", "Emisiones CO2 per capita"),
-    #                                                         c("Nível de renda países do mundo", "Ano", "Emissões CO2 per capita")))
-    #   print(l0[[input$`initial_data-inputDataSample`]][[ln]])
-    #   names(inputData()()) <- l0[[input$`initial_data-inputDataSample`]][[ln]]
-    # }
-    #   
-    # }
-    # req(input$`initial_data-tableInput`)
-    # req(input$`initial_data-inputDataSample`)
+    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = "80vh"), enableCTypes = FALSE))
   })
   
   path <- "parmesan"
@@ -127,6 +98,7 @@ server <- function(input, output, session) {
     names(ch0) <- i_(ch0, lang())
     ch1 <- as.character(parmesan$size$inputs[[3]]$input_params$choices)
     names(ch1) <- i_(ch1, lang())
+    
     updateRadioButtons(session, "page_type", choices = ch0, inline = TRUE, selected = input$page_type)
     updateRadioButtons(session, "full_width", choices = ch1, selected = input$full_width)
   })
@@ -147,7 +119,7 @@ server <- function(input, output, session) {
     if (sum(input$selection) > 0) 
       sl <- "multiple"
     
-    st <- paste0("color: #", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
+    st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
     
     reactable(dt(),
               
@@ -187,6 +159,12 @@ server <- function(input, output, session) {
     )
   })
   
+  output$download <- renderUI({
+    lb <- i_("download_table", lang())
+    dw <- i_("download", lang())
+    downloadHtmlwidgetUI("download_data_button", label = lb, text = paste(dw, "HTML"), display = "dropdown", dropdownWidth = 170)
+  })
+  
   # renderizando reactable
   output$result <- renderReactable({
     session$sendCustomMessage("setButtonState", c("none", "download_data_button-downloadHtmlwidget"))
@@ -194,10 +172,10 @@ server <- function(input, output, session) {
     rctbl()
   })
   
-  output$modal <- renderUI({
-    dw <- i_("download", lang())#Download HTML
-    downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
-  })
+  # output$modal <- renderUI({
+  #   dw <- i_("download", lang())#Download HTML
+  #   downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
+  # })
   
   # descargas
   callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()), name = "table")
