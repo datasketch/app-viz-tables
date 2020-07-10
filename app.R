@@ -4,9 +4,9 @@ library(shinyinvoer)
 library(shi18ny)
 library(V8)
 library(dsmodules)
-# library(htmlwidgets)
+library(htmlwidgets)
 library(hotr)
-library(purrr)
+library(tidyverse)
 # library(homodatum)
 library(reactable)
 library(shinycustomloader)
@@ -25,11 +25,10 @@ ui <- panelsPage(useShi18ny(),
                        color = "chardonnay",
                        body = uiOutput("controls")),
                  panel(title = ui_("viz"),
+                       title_plugin = uiOutput("download"),
                        color = "chardonnay",
                        can_collapse = FALSE,
                        body = div(langSelectorInput("lang", position = "fixed"),
-                                  uiOutput("download"),
-                                  br(),
                                   withLoader(reactableOutput("result"), type = "image", loader = "loading_gris.gif"))))
                  
 

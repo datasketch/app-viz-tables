@@ -1,0 +1,12 @@
+name: app-viz-tables
+title: app-viz-tables
+username:
+account: randommonkey
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2554992
+bundleId: 3374293
+url: https://randommonkey.shinyapps.io/app-viz-tables/
+when: 1594343677.92837
+asMultiple: FALSE
+asStatic: FALSE

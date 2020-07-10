@@ -155,7 +155,6 @@ page_type:
       - simple
       Jump:
       - jump
-    inline: true
 page_size:
   show: true
   show_if: 
