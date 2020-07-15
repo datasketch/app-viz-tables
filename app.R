@@ -14,6 +14,7 @@ library(shinycustomloader)
 # unidades (width, height pixeles)
 
 ui <- panelsPage(useShi18ny(),
+                 showDebug(),
                  panel(title = ui_("upload_data"),
                        width = 200,
                        body = uiOutput("table_input")),
@@ -117,6 +118,10 @@ server <- function(input, output, session) {
     sl <- NULL
     if (sum(input$selection) > 0) 
       sl <- "multiple"
+    pt <- "numbers"
+    if (!is.null(input$page_type)) {
+      pt <- input$page_type 
+    }
     
     st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
     
@@ -127,21 +132,21 @@ server <- function(input, output, session) {
               width = ifelse(input$full_width == "full_width", "auto", input$width_l),
               wrap = input$wrap,
               resizable = input$resizable,
-              
+
               outlined = input$outlined,
               bordered = ifelse(!input$outlined, FALSE, input$bordered),
               borderless = !input$borderless,
               striped = input$striped,
               compact = input$compact,
               highlight = input$highlight,
-              
-              pagination = input$show_pagination,
+
+              pagination = input  $show_pagination,
               showPagination = input$show_pagination,
               showPageInfo = ifelse(input$show_pagination, input$show_page_info, FALSE),
               showPageSizeOptions = ifelse(input$show_pagination, input$page_size_control, FALSE),
-              paginationType = input$page_type,
+              paginationType = pt,
               defaultPageSize = input$page_size,
-              
+
               # showSortIcon = ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
               # showSortable =  ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
               sortable = input$sortable,
@@ -151,9 +156,9 @@ server <- function(input, output, session) {
               filterable = input$filterable,
               searchable = input$searchable,
               selection = sl,
-              
+
               pageSizeOptions = seq(5, nrow(dt()), 5),
-              
+
               style = st
     )
   })
@@ -170,11 +175,6 @@ server <- function(input, output, session) {
     req(rctbl())
     rctbl()
   })
-  
-  # output$modal <- renderUI({
-  #   dw <- i_("download", lang())#Download HTML
-  #   downloadHtmlwidgetUI("download_data_button", paste(dw, "HTML"))
-  # })
   
   # descargas
   callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()), name = "table")

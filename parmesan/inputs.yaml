@@ -73,10 +73,11 @@ resizable:
     value: true
 outlined:
   show: true
-  input_type: checkboxInput
+  input_type: toggleSwitchInput
   input_params:
     label: outlined
-    value: false
+    on_label: ""
+    off_label: ""
 bordered:
   show: true
   show_if:
@@ -112,9 +113,11 @@ highlight:
     value: false
 show_pagination:
   show: true
-  input_type: checkboxInput
+  input_type: toggleSwitchInput
   input_params:
     label: show_pagination
+    on_label: ""
+    off_label: ""
     value: true
 pagination:
   show: true
