@@ -49,6 +49,7 @@ page_size: Rows per page
 page_type: Pagination type
 download_table: Download table
 download: Download
+get_link: Get link
 numbers: Numbers
 simple: Simple
 jump: Jump

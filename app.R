@@ -4,10 +4,8 @@ library(shinyinvoer)
 library(shi18ny)
 library(V8)
 library(dsmodules)
-library(htmlwidgets)
 library(hotr)
 library(tidyverse)
-# library(homodatum)
 library(reactable)
 library(shinycustomloader)
 
@@ -30,8 +28,8 @@ ui <- panelsPage(useShi18ny(),
                        color = "chardonnay",
                        can_collapse = FALSE,
                        body = div(langSelectorInput("lang", position = "fixed"),
-                                  withLoader(reactableOutput("result"), type = "image", loader = "loading_gris.gif"))))
-                 
+                                  withLoader(uiOutput("result"), type = "image", loader = "loading_gris.gif"))))
+
 
 
 server <- function(input, output, session) {
@@ -79,7 +77,7 @@ server <- function(input, output, session) {
   
   output$data_preview <- renderUI({
     req(inputData())
-    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = "80vh"), enableCTypes = FALSE))
+    suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = "86vh"), enableCTypes = FALSE))
   })
   
   path <- "parmesan"
@@ -99,7 +97,7 @@ server <- function(input, output, session) {
     ch1 <- as.character(parmesan$size$inputs[[3]]$input_params$choices)
     names(ch1) <- i_(ch1, lang())
     
-    updateRadioButtons(session, "page_type", choices = ch0, inline = TRUE, selected = input$page_type)
+    updateRadioButtons(session, "page_type", choices = ch0, selected = input$page_type)
     updateRadioButtons(session, "full_width", choices = ch1, selected = input$full_width)
   })
   
@@ -124,60 +122,69 @@ server <- function(input, output, session) {
     }
     
     st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
-    
-    reactable(dt(),
-              
-              height = input$height,
-              fullWidth = ifelse(input$full_width == "full_width", TRUE, FALSE),
-              width = ifelse(input$full_width == "full_width", "auto", input$width_l),
-              wrap = input$wrap,
-              resizable = input$resizable,
-
-              outlined = input$outlined,
-              bordered = ifelse(!input$outlined, FALSE, input$bordered),
-              borderless = !input$borderless,
-              striped = input$striped,
-              compact = input$compact,
-              highlight = input$highlight,
-
-              pagination = input  $show_pagination,
-              showPagination = input$show_pagination,
-              showPageInfo = ifelse(input$show_pagination, input$show_page_info, FALSE),
-              showPageSizeOptions = ifelse(input$show_pagination, input$page_size_control, FALSE),
-              paginationType = pt,
-              defaultPageSize = input$page_size,
-
-              # showSortIcon = ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
-              # showSortable =  ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
-              sortable = input$sortable,
-              showSortIcon = TRUE,
-              showSortable =  TRUE,
-              groupBy = input$group_by,
-              filterable = input$filterable,
-              searchable = input$searchable,
-              selection = sl,
-
-              pageSizeOptions = seq(5, nrow(dt()), 5),
-
-              style = st
-    )
+    safe_reactable <- purrr::safely(reactable)
+    safe_reactable(dt(),
+                   
+                   height = input$height,
+                   fullWidth = ifelse(input$full_width == "full_width", TRUE, FALSE),
+                   width = ifelse(input$full_width == "full_width", "auto", input$width_l),
+                   wrap = input$wrap,
+                   resizable = input$resizable,
+                   
+                   outlined = input$outlined,
+                   bordered = ifelse(!input$outlined, FALSE, input$bordered),
+                   borderless = !input$borderless,
+                   striped = input$striped,
+                   compact = input$compact,
+                   highlight = input$highlight,
+                   
+                   pagination = input  $show_pagination,
+                   showPagination = input$show_pagination,
+                   showPageInfo = ifelse(input$show_pagination, input$show_page_info, FALSE),
+                   showPageSizeOptions = ifelse(input$show_pagination, input$page_size_control, FALSE),
+                   paginationType = pt,
+                   defaultPageSize = input$page_size,
+                   
+                   # showSortIcon = ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
+                   # showSortable =  ifelse(is.null(input$show_sort_icon), FALSE, input$show_sort_icon),
+                   sortable = input$sortable,
+                   showSortIcon = TRUE,
+                   showSortable =  TRUE,
+                   groupBy = input$group_by,
+                   filterable = input$filterable,
+                   searchable = input$searchable,
+                   selection = sl,
+                   
+                   pageSizeOptions = seq(5, nrow(dt()), 5),
+                   
+                   style = st)
   })
   
   output$download <- renderUI({
     lb <- i_("download_table", lang())
     dw <- i_("download", lang())
-    downloadHtmlwidgetUI("download_data_button", label = lb, text = paste(dw, "HTML"), display = "dropdown", dropdownWidth = 170)
+    gl <- i_("get_link", lang())
+    downloadHtmlwidgetUI("download_data_button", dropdownLabel = lb, text = dw, formats = c("link", "html"),
+                         display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl)
   })
   
   # renderizando reactable
-  output$result <- renderReactable({
-    session$sendCustomMessage("setButtonState", c("none", "download_data_button-downloadHtmlwidget"))
+  output$result <- renderUI({
+    res <- rctbl()
+    if (is.null(res$result)) {
+      infomessage(p(res$error$message))
+    } else {
+      reactableOutput("result_table", height = "61vh")
+    }
+  })
+  
+  output$result_table <- renderReactable({
     req(rctbl())
-    rctbl()
+    rctbl()$result
   })
   
   # descargas
-  callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()), name = "table")
+  callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
   
 }
 

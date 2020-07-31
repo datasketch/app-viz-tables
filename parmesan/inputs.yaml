@@ -38,7 +38,7 @@ full_width:
   show: true
   input_type: radioButtons
   input_params:
-    label: full_width
+    label: width_sl
     choices:
       Full width:
       - full_width

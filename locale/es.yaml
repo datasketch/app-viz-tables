@@ -49,6 +49,7 @@ page_size: Número de filas por página
 page_type: Tipo de paginación
 download_table: Descargar tabla
 download: Descargar
+get_link: Obtener enlace
 numbers: Números
 simple: Simple
 jump: Salto
