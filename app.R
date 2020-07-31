@@ -11,6 +11,7 @@ library(shinycustomloader)
 
 # unidades (width, height pixeles)
 
+
 ui <- panelsPage(useShi18ny(),
                  showDebug(),
                  panel(title = ui_("upload_data"),
