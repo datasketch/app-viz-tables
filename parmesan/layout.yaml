@@ -1,9 +1,12 @@
-text:
-  label: text
+styles:
+  label: styles
   inputs:
     - font_family
     - color
     - font_size
+    - color_header
+    - font_color_header
+    - hyperlink
 sort_group_filter:
   label: sort_group_filter
   inputs:

@@ -1,749 +1,749 @@
-País,Ano,Expectativa de vida
-Afghanistan,1800,28.2
-Afghanistan,1900,29.4
-Afghanistan,2000,54.6
-Afghanistan,2100,77.7
-Albania,1800,35.4
-Albania,1900,35.4
-Albania,2000,74.9
-Albania,2100,88.3
-Algeria,1800,28.8
-Algeria,1900,30.2
-Algeria,2000,74
-Algeria,2100,89.2
-Andorra,1800,NA
-Andorra,1900,NA
-Andorra,2000,81.2
-Andorra,2100,NA
-Angola,1800,27
-Angola,1900,29
-Angola,2000,51.7
-Angola,2100,79.9
-Antigua and Barbuda,1800,33.5
-Antigua and Barbuda,1900,33.8
-Antigua and Barbuda,2000,74.7
-Antigua and Barbuda,2100,87
-Argentina,1800,33.2
-Argentina,1900,36.6
-Argentina,2000,74.2
-Argentina,2100,87.6
-Armenia,1800,34
-Armenia,1900,35.1
-Armenia,2000,72.3
-Armenia,2100,86.4
-Australia,1800,34
-Australia,1900,50
-Australia,2000,79.5
-Australia,2100,92
-Austria,1800,34.4
-Austria,1900,41.6
-Austria,2000,78.3
-Austria,2100,91.8
-Azerbaijan,1800,29.2
-Azerbaijan,1900,30.7
-Azerbaijan,2000,66.8
-Azerbaijan,2100,80.9
-Bahamas,1800,35.2
-Bahamas,1900,35.1
-Bahamas,2000,71.5
-Bahamas,2100,84
-Bahrain,1800,30.3
-Bahrain,1900,30.6
-Bahrain,2000,72.6
-Bahrain,2100,89.4
-Bangladesh,1800,25.5
-Bangladesh,1900,21.3
-Bangladesh,2000,65.5
-Bangladesh,2100,87.6
-Barbados,1800,32.1
-Barbados,1900,32.8
-Barbados,2000,74.8
-Barbados,2100,86.7
-Belarus,1800,36.2
-Belarus,1900,36.1
-Belarus,2000,68.8
-Belarus,2100,84.8
-Belgium,1800,40
-Belgium,1900,46.6
-Belgium,2000,77.8
-Belgium,2100,91.4
-Belize,1800,26.5
-Belize,1900,26.6
-Belize,2000,70.3
-Belize,2100,85.4
-Benin,1800,31
-Benin,1900,32
-Benin,2000,57.5
-Benin,2100,78.8
-Bhutan,1800,28.8
-Bhutan,1900,31.6
-Bhutan,2000,65.7
-Bhutan,2100,88.1
-Bolivia,1800,33
-Bolivia,1900,33.9
-Bolivia,2000,66.5
-Bolivia,2100,86.6
-Bosnia and Herzegovina,1800,35.1
-Bosnia and Herzegovina,1900,35.4
-Bosnia and Herzegovina,2000,75.3
-Bosnia and Herzegovina,2100,87.4
-Botswana,1800,33.6
-Botswana,1900,33.8
-Botswana,2000,54
-Botswana,2100,80.3
-Brazil,1800,32
-Brazil,1900,32.3
-Brazil,2000,71.4
-Brazil,2100,88
-Brunei,1800,29.2
-Brunei,1900,28.6
-Brunei,2000,73.8
-Brunei,2100,85.7
-Bulgaria,1800,35.8
-Bulgaria,1900,40.2
-Bulgaria,2000,71.6
-Bulgaria,2100,85.3
-Burkina Faso,1800,29.2
-Burkina Faso,1900,30.4
-Burkina Faso,2000,52.4
-Burkina Faso,2100,78.4
-Burundi,1800,31.5
-Burundi,1900,31.8
-Burundi,2000,44.9
-Burundi,2100,78.1
-Cambodia,1800,35
-Cambodia,1900,35.8
-Cambodia,2000,60.2
-Cambodia,2100,82.6
-Cameroon,1800,28.8
-Cameroon,1900,29.7
-Cameroon,2000,54.8
-Cameroon,2100,79.5
-Canada,1800,39
-Canada,1900,48.3
-Canada,2000,79.2
-Canada,2100,91.6
-Cape Verde,1800,33.8
-Cape Verde,1900,35.2
-Cape Verde,2000,71.2
-Cape Verde,2100,88.9
-Central African Republic,1800,30
-Central African Republic,1900,31.1
-Central African Republic,2000,44.3
-Central African Republic,2100,68.1
-Chad,1800,30.9
-Chad,1900,32.7
-Chad,2000,52.1
-Chad,2100,77.9
-Chile,1800,32
-Chile,1900,32.2
-Chile,2000,76.9
-Chile,2100,90.5
-China,1800,32
-China,1900,32
-China,2000,72.1
-China,2100,88.6
-Colombia,1800,32
-Colombia,1900,32.8
-Colombia,2000,74.1
-Colombia,2100,92
-Comoros,1800,32.1
-Comoros,1900,32.7
-Comoros,2000,61.6
-Comoros,2100,80.7
-"Congo, Dem. Rep.",1800,31.6
-"Congo, Dem. Rep.",1900,33
-"Congo, Dem. Rep.",2000,53.8
-"Congo, Dem. Rep.",2100,76.7
-"Congo, Rep.",1800,32.7
-"Congo, Rep.",1900,31.8
-"Congo, Rep.",2000,52.8
-"Congo, Rep.",2100,73.9
-Costa Rica,1800,30.2
-Costa Rica,1900,35
-Costa Rica,2000,77.9
-Costa Rica,2100,90.2
-Cote d'Ivoire,1800,31.2
-Cote d'Ivoire,1900,32.7
-Cote d'Ivoire,2000,52.3
-Cote d'Ivoire,2100,77.1
-Croatia,1800,36.1
-Croatia,1900,36.1
-Croatia,2000,74.5
-Croatia,2100,89.3
-Cuba,1800,32.2
-Cuba,1900,33.4
-Cuba,2000,76.8
-Cuba,2100,88.6
-Cyprus,1800,38.5
-Cyprus,1900,41.5
-Cyprus,2000,76.8
-Cyprus,2100,91.8
-Czech Republic,1800,35
-Czech Republic,1900,40.2
-Czech Republic,2000,75
-Czech Republic,2100,89.3
-Denmark,1800,37.4
-Denmark,1900,51.9
-Denmark,2000,77
-Denmark,2100,90.6
-Djibouti,1800,29.9
-Djibouti,1900,31.6
-Djibouti,2000,60.5
-Djibouti,2100,82.3
-Dominica,1800,NA
-Dominica,1900,NA
-Dominica,2000,73.7
-Dominica,2100,NA
-Dominican Republic,1800,29.9
-Dominican Republic,1900,31.1
-Dominican Republic,2000,73.9
-Dominican Republic,2100,85.1
-Ecuador,1800,32.9
-Ecuador,1900,33.9
-Ecuador,2000,74.2
-Ecuador,2100,88.9
-Egypt,1800,33
-Egypt,1900,32.7
-Egypt,2000,68.7
-Egypt,2100,82.3
-El Salvador,1800,28.7
-El Salvador,1900,29.2
-El Salvador,2000,72.4
-El Salvador,2100,87.4
-Equatorial Guinea,1800,29.8
-Equatorial Guinea,1900,30.8
-Equatorial Guinea,2000,55.6
-Equatorial Guinea,2100,81.8
-Eritrea,1800,30.2
-Eritrea,1900,30.7
-Eritrea,2000,53.3
-Eritrea,2100,77.6
-Estonia,1800,36.1
-Estonia,1900,43.1
-Estonia,2000,71
-Estonia,2100,88.2
-Ethiopia,1800,29.7
-Ethiopia,1900,29.7
-Ethiopia,2000,50.8
-Ethiopia,2100,85.1
-Fiji,1800,26.1
-Fiji,1900,27
-Fiji,2000,65.9
-Fiji,2100,79
-Finland,1800,36.6
-Finland,1900,41.8
-Finland,2000,77.8
-Finland,2100,91.3
-France,1800,34
-France,1900,45.1
-France,2000,79.1
-France,2100,92.5
-Gabon,1800,30.6
-Gabon,1900,31.8
-Gabon,2000,59.3
-Gabon,2100,80.3
-Gambia,1800,28.8
-Gambia,1900,32.4
-Gambia,2000,61.7
-Gambia,2100,80.6
-Georgia,1800,31.9
-Georgia,1900,33.4
-Georgia,2000,73.1
-Georgia,2100,84.1
-Germany,1800,38.4
-Germany,1900,43.9
-Germany,2000,78.3
-Germany,2100,90.7
-Ghana,1800,28
-Ghana,1900,29.1
-Ghana,2000,59.4
-Ghana,2100,79
-Greece,1800,36.6
-Greece,1900,40.5
-Greece,2000,78.8
-Greece,2100,90.8
-Grenada,1800,31.4
-Grenada,1900,37.7
-Grenada,2000,73.9
-Grenada,2100,84.8
-Guatemala,1800,25.8
-Guatemala,1900,25.4
-Guatemala,2000,68
-Guatemala,2100,85.6
-Guinea,1800,29.5
-Guinea,1900,32.6
-Guinea,2000,54.4
-Guinea,2100,74.6
-Guinea-Bissau,1800,32
-Guinea-Bissau,1900,31.1
-Guinea-Bissau,2000,52
-Guinea-Bissau,2100,75.5
-Guyana,1800,31.1
-Guyana,1900,31.5
-Guyana,2000,66.2
-Guyana,2100,79.2
-Haiti,1800,29
-Haiti,1900,28.8
-Haiti,2000,57.4
-Haiti,2100,79.4
-Honduras,1800,33.9
-Honduras,1900,35.1
-Honduras,2000,70.4
-Honduras,2100,85.6
-Hungary,1800,36
-Hungary,1900,37.3
-Hungary,2000,71.8
-Hungary,2100,87.5
-Iceland,1800,42.9
-Iceland,1900,46.6
-Iceland,2000,80.1
-Iceland,2100,92.2
-India,1800,25.4
-India,1900,18.4
-India,2000,62.9
-India,2100,81.8
-Indonesia,1800,30
-Indonesia,1900,30.3
-Indonesia,2000,67.3
-Indonesia,2100,84.3
-Iran,1800,25.6
-Iran,1900,26.3
-Iran,2000,73.6
-Iran,2100,89.1
-Iraq,1800,31.2
-Iraq,1900,31.6
-Iraq,2000,66.7
-Iraq,2100,88.3
-Ireland,1800,38.3
-Ireland,1900,49.2
-Ireland,2000,76.6
-Ireland,2100,91.8
-Israel,1800,32
-Israel,1900,32
-Israel,2000,78.7
-Israel,2100,92.7
-Italy,1800,29.7
-Italy,1900,41.7
-Italy,2000,79.6
-Italy,2100,92.9
-Jamaica,1800,34.2
-Jamaica,1900,38
-Jamaica,2000,74
-Jamaica,2100,84.8
-Japan,1800,36.4
-Japan,1900,38.7
-Japan,2000,81.4
-Japan,2100,93.7
-Jordan,1800,31.7
-Jordan,1900,31.9
-Jordan,2000,72.8
-Jordan,2100,90.8
-Kazakhstan,1800,26.2
-Kazakhstan,1900,28.4
-Kazakhstan,2000,65.5
-Kazakhstan,2100,83.6
-Kenya,1800,25.5
-Kenya,1900,26.4
-Kenya,2000,55.6
-Kenya,2100,80.1
-Kiribati,1800,24.9
-Kiribati,1900,25.4
-Kiribati,2000,59.3
-Kiribati,2100,75.3
-Kuwait,1800,26
-Kuwait,1900,26.4
-Kuwait,2000,78.6
-Kuwait,2100,93.8
-Kyrgyz Republic,1800,23.9
-Kyrgyz Republic,1900,25.8
-Kyrgyz Republic,2000,66.9
-Kyrgyz Republic,2100,84.6
-Lao,1800,31.9
-Lao,1900,31
-Lao,2000,57.1
-Lao,2100,81.5
-Latvia,1800,33
-Latvia,1900,46.2
-Latvia,2000,70.7
-Latvia,2100,85.7
-Lebanon,1800,29.7
-Lebanon,1900,29.9
-Lebanon,2000,75.4
-Lebanon,2100,88.4
-Lesotho,1800,32.8
-Lesotho,1900,34.2
-Lesotho,2000,48.9
-Lesotho,2100,75
-Liberia,1800,31.1
-Liberia,1900,32.9
-Liberia,2000,54.3
-Liberia,2100,77.6
-Libya,1800,33.1
-Libya,1900,34.7
-Libya,2000,73.2
-Libya,2100,84.8
-Lithuania,1800,28.9
-Lithuania,1900,41.7
-Lithuania,2000,72.3
-Lithuania,2100,85.7
-Luxembourg,1800,36.9
-Luxembourg,1900,47.6
-Luxembourg,2000,78
-Luxembourg,2100,91.6
-Madagascar,1800,30.5
-Madagascar,1900,31.7
-Madagascar,2000,58.9
-Madagascar,2100,78.5
-Malawi,1800,30.3
-Malawi,1900,30.9
-Malawi,2000,44.6
-Malawi,2100,81.4
-Malaysia,1800,30.6
-Malaysia,1900,30.6
-Malaysia,2000,72.8
-Malaysia,2100,85.4
-Maldives,1800,32.6
-Maldives,1900,31.9
-Maldives,2000,72.3
-Maldives,2100,94.8
-Mali,1800,26.4
-Mali,1900,28.2
-Mali,2000,53.3
-Mali,2100,76.5
-Malta,1800,28.7
-Malta,1900,41.9
-Malta,2000,78.5
-Malta,2100,90.7
-Marshall Islands,1800,NA
-Marshall Islands,1900,NA
-Marshall Islands,2000,61.7
-Marshall Islands,2100,NA
-Mauritania,1800,32
-Mauritania,1900,32.9
-Mauritania,2000,63.5
-Mauritania,2100,82.2
-Mauritius,1800,28.7
-Mauritius,1900,26.1
-Mauritius,2000,72.2
-Mauritius,2100,86.2
-Mexico,1800,26.9
-Mexico,1900,27.7
-Mexico,2000,74.6
-Mexico,2100,87.2
-"Micronesia, Fed. Sts.",1800,26.7
-"Micronesia, Fed. Sts.",1900,26.5
-"Micronesia, Fed. Sts.",2000,65.2
-"Micronesia, Fed. Sts.",2100,76
-Moldova,1800,33.1
-Moldova,1900,32.9
-Moldova,2000,68.6
-Moldova,2100,84.1
-Mongolia,1800,31.8
-Mongolia,1900,31.5
-Mongolia,2000,62
-Mongolia,2100,82.5
-Montenegro,1800,35.4
-Montenegro,1900,35.7
-Montenegro,2000,73.9
-Montenegro,2100,86.7
-Morocco,1800,33.1
-Morocco,1900,33.5
-Morocco,2000,69.3
-Morocco,2100,85.8
-Mozambique,1800,30.3
-Mozambique,1900,32.1
-Mozambique,2000,50.5
-Mozambique,2100,76.9
-Myanmar,1800,30.8
-Myanmar,1900,29.9
-Myanmar,2000,58.7
-Myanmar,2100,81.1
-Namibia,1800,32.4
-Namibia,1900,33.5
-Namibia,2000,54.5
-Namibia,2100,82.5
-Nepal,1800,32.8
-Nepal,1900,34.4
-Nepal,2000,65.7
-Nepal,2100,84.9
-Netherlands,1800,39.9
-Netherlands,1900,48.4
-Netherlands,2000,78.1
-Netherlands,2100,91
-New Zealand,1800,34
-New Zealand,1900,47.4
-New Zealand,2000,78.3
-New Zealand,2100,91.5
-Nicaragua,1800,25.4
-Nicaragua,1900,25.9
-Nicaragua,2000,75
-Nicaragua,2100,92.6
-Niger,1800,30.8
-Niger,1900,32.5
-Niger,2000,51.8
-Niger,2100,77.3
-Nigeria,1800,30.4
-Nigeria,1900,33.8
-Nigeria,2000,55.2
-Nigeria,2100,83.7
-North Korea,1800,26
-North Korea,1900,27
-North Korea,2000,62.1
-North Korea,2100,84.9
-North Macedonia,1800,36.1
-North Macedonia,1900,36.5
-North Macedonia,2000,73.9
-North Macedonia,2100,87.2
-Norway,1800,37.9
-Norway,1900,53.4
-Norway,2000,78.6
-Norway,2100,91.9
-Oman,1800,32.3
-Oman,1900,32.1
-Oman,2000,73
-Oman,2100,89.1
-Pakistan,1800,25.8
-Pakistan,1900,21.4
-Pakistan,2000,61.9
-Pakistan,2100,77.6
-Palestine,1800,32.1
-Palestine,1900,33.2
-Palestine,2000,70.5
-Palestine,2100,88.7
-Panama,1800,32.9
-Panama,1900,33.4
-Panama,2000,77.4
-Panama,2100,90.5
-Papua New Guinea,1800,31.5
-Papua New Guinea,1900,32.8
-Papua New Guinea,2000,56
-Papua New Guinea,2100,68.6
-Paraguay,1800,35.5
-Paraguay,1900,36.1
-Paraguay,2000,74.5
-Paraguay,2100,86.6
-Peru,1800,35.7
-Peru,1900,34.6
-Peru,2000,74.7
-Peru,2100,93.6
-Philippines,1800,30.9
-Philippines,1900,31.3
-Philippines,2000,69.3
-Philippines,2100,80.9
-Poland,1800,35.9
-Poland,1900,40.5
-Poland,2000,73.9
-Poland,2100,88.6
-Portugal,1800,35.6
-Portugal,1900,35.6
-Portugal,2000,76.7
-Portugal,2100,91.6
-Qatar,1800,30.8
-Qatar,1900,30.2
-Qatar,2000,74.1
-Qatar,2100,90.4
-Romania,1800,35.7
-Romania,1900,35.7
-Romania,2000,71.1
-Romania,2100,85.9
-Russia,1800,29.6
-Russia,1900,30.8
-Russia,2000,65.5
-Russia,2100,83.7
-Rwanda,1800,31.8
-Rwanda,1900,25.4
-Rwanda,2000,49.6
-Rwanda,2100,83.7
-Samoa,1800,25.4
-Samoa,1900,27.1
-Samoa,2000,71.7
-Samoa,2100,83.9
-Sao Tome and Principe,1800,31
-Sao Tome and Principe,1900,31.4
-Sao Tome and Principe,2000,64.6
-Sao Tome and Principe,2100,79.3
-Saudi Arabia,1800,32.1
-Saudi Arabia,1900,34.2
-Saudi Arabia,2000,74.7
-Saudi Arabia,2100,88.2
-Senegal,1800,25.2
-Senegal,1900,26.9
-Senegal,2000,60.6
-Senegal,2100,82.2
-Serbia,1800,35.5
-Serbia,1900,35.6
-Serbia,2000,72.1
-Serbia,2100,86.5
-Seychelles,1800,37
-Seychelles,1900,45
-Seychelles,2000,71.5
-Seychelles,2100,85
-Sierra Leone,1800,25.1
-Sierra Leone,1900,27.4
-Sierra Leone,2000,50.9
-Sierra Leone,2100,79.7
-Singapore,1800,29.1
-Singapore,1900,34.2
-Singapore,2000,79.3
-Singapore,2100,94.7
-Slovak Republic,1800,36.4
-Slovak Republic,1900,37.9
-Slovak Republic,2000,73.5
-Slovak Republic,2100,87.8
-Slovenia,1800,36.6
-Slovenia,1900,36.4
-Slovenia,2000,76
-Slovenia,2100,91.2
-Solomon Islands,1800,25.1
-Solomon Islands,1900,25.1
-Solomon Islands,2000,61.5
-Solomon Islands,2100,78.7
-Somalia,1800,29.4
-Somalia,1900,31.2
-Somalia,2000,52.5
-Somalia,2100,73.9
-South Africa,1800,33.5
-South Africa,1900,34.5
-South Africa,2000,55.6
-South Africa,2100,79.8
-South Korea,1800,25.8
-South Korea,1900,25.9
-South Korea,2000,76.3
-South Korea,2100,92.8
-South Sudan,1800,26.7
-South Sudan,1900,29.6
-South Sudan,2000,54.4
-South Sudan,2100,73.3
-Spain,1800,29.5
-Spain,1900,34.7
-Spain,2000,79.4
-Spain,2100,92.6
-Sri Lanka,1800,32.6
-Sri Lanka,1900,32.5
-Sri Lanka,2000,71.6
-Sri Lanka,2100,89
-St. Lucia,1800,28
-St. Lucia,1900,28.2
-St. Lucia,2000,73.8
-St. Lucia,2100,85.7
-St. Vincent and the Grenadines,1800,26
-St. Vincent and the Grenadines,1900,26
-St. Vincent and the Grenadines,2000,71.2
-St. Vincent and the Grenadines,2100,83
-Sudan,1800,31.4
-Sudan,1900,31.5
-Sudan,2000,63.4
-Sudan,2100,84.4
-Suriname,1800,32.9
-Suriname,1900,32.9
-Suriname,2000,69.5
-Suriname,2100,83.3
-Swaziland,1800,32.3
-Swaziland,1900,32.9
-Swaziland,2000,48.3
-Swaziland,2100,76.2
-Sweden,1800,32.2
-Sweden,1900,52.3
-Sweden,2000,79.8
-Sweden,2100,92.1
-Switzerland,1800,38
-Switzerland,1900,47.5
-Switzerland,2000,80.1
-Switzerland,2100,93.6
-Syria,1800,31.1
-Syria,1900,31.8
-Syria,2000,72.5
-Syria,2100,85
-Tajikistan,1800,24.2
-Tajikistan,1900,25.9
-Tajikistan,2000,67.8
-Tajikistan,2100,82.7
-Tanzania,1800,32.2
-Tanzania,1900,33.4
-Tanzania,2000,53.5
-Tanzania,2100,82.7
-Thailand,1800,30.4
-Thailand,1900,30.9
-Thailand,2000,71.8
-Thailand,2100,90
-Timor-Leste,1800,28.9
-Timor-Leste,1900,30.3
-Timor-Leste,2000,65.3
-Timor-Leste,2100,83.2
-Togo,1800,31.3
-Togo,1900,32.4
-Togo,2000,56.9
-Togo,2100,79
-Tonga,1800,28.2
-Tonga,1900,28.6
-Tonga,2000,70.7
-Tonga,2100,81.6
-Trinidad and Tobago,1800,32.9
-Trinidad and Tobago,1900,39
-Trinidad and Tobago,2000,70.4
-Trinidad and Tobago,2100,85.2
-Tunisia,1800,28.8
-Tunisia,1900,30
-Tunisia,2000,74.3
-Tunisia,2100,90.1
-Turkey,1800,35
-Turkey,1900,35.7
-Turkey,2000,74.1
-Turkey,2100,91.8
-Turkmenistan,1800,24
-Turkmenistan,1900,24.3
-Turkmenistan,2000,66.7
-Turkmenistan,2100,80.8
-Uganda,1800,25.3
-Uganda,1900,25.3
-Uganda,2000,49.1
-Uganda,2100,82.2
-Ukraine,1800,36.6
-Ukraine,1900,36.4
-Ukraine,2000,68
-Ukraine,2100,81.6
-United Arab Emirates,1800,30.7
-United Arab Emirates,1900,31
-United Arab Emirates,2000,71.8
-United Arab Emirates,2100,83
-United Kingdom,1800,38.6
-United Kingdom,1900,46.3
-United Kingdom,2000,78
-United Kingdom,2100,90.6
-United States,1800,39.4
-United States,1900,49
-United States,2000,76.9
-United States,2100,88.5
-Uruguay,1800,32.9
-Uruguay,1900,32.9
-Uruguay,2000,74.6
-Uruguay,2100,87.5
-Uzbekistan,1800,26.9
-Uzbekistan,1900,29
-Uzbekistan,2000,67.3
-Uzbekistan,2100,80
-Vanuatu,1800,24.3
-Vanuatu,1900,25
-Vanuatu,2000,63.4
-Vanuatu,2100,74.5
-Venezuela,1800,32.2
-Venezuela,1900,32.4
-Venezuela,2000,74
-Venezuela,2100,87.3
-Vietnam,1800,32
-Vietnam,1900,31.2
-Vietnam,2000,71.5
-Vietnam,2100,85.3
-Yemen,1800,23.4
-Yemen,1900,23.5
-Yemen,2000,63.3
-Yemen,2100,78.4
-Zambia,1800,32.6
-Zambia,1900,33.6
-Zambia,2000,46
-Zambia,2100,78.1
-Zimbabwe,1800,33.7
-Zimbabwe,1900,34.1
-Zimbabwe,2000,46.6
-Zimbabwe,2100,75.7
+País,Ano,Expectativa de vida,Wikipedia
+Afghanistan,1800,28.2,https://en.wikipedia.org/wiki/Afghanistan
+Afghanistan,1900,29.4,-
+Afghanistan,2000,54.6,-
+Afghanistan,2100,77.7,-
+Albania,1800,35.4,https://en.wikipedia.org/wiki/Albania
+Albania,1900,35.4,-
+Albania,2000,74.9,-
+Albania,2100,88.3,-
+Algeria,1800,28.8,https://en.wikipedia.org/wiki/Algeria
+Algeria,1900,30.2,-
+Algeria,2000,74,-
+Algeria,2100,89.2,-
+Andorra,1800,NA,https://en.wikipedia.org/wiki/Andorra
+Andorra,1900,NA,-
+Andorra,2000,81.2,-
+Andorra,2100,NA,-
+Angola,1800,27,https://en.wikipedia.org/wiki/Angola
+Angola,1900,29,-
+Angola,2000,51.7,-
+Angola,2100,79.9,-
+Antigua and Barbuda,1800,33.5,https://en.wikipedia.org/wiki/Antigua and Barbuda
+Antigua and Barbuda,1900,33.8,-
+Antigua and Barbuda,2000,74.7,-
+Antigua and Barbuda,2100,87,-
+Argentina,1800,33.2,https://en.wikipedia.org/wiki/Argentina
+Argentina,1900,36.6,-
+Argentina,2000,74.2,-
+Argentina,2100,87.6,-
+Armenia,1800,34,https://en.wikipedia.org/wiki/Armenia
+Armenia,1900,35.1,-
+Armenia,2000,72.3,-
+Armenia,2100,86.4,-
+Australia,1800,34,https://en.wikipedia.org/wiki/Australia
+Australia,1900,50,-
+Australia,2000,79.5,-
+Australia,2100,92,-
+Austria,1800,34.4,https://en.wikipedia.org/wiki/Austria
+Austria,1900,41.6,-
+Austria,2000,78.3,-
+Austria,2100,91.8,-
+Azerbaijan,1800,29.2,https://en.wikipedia.org/wiki/Azerbaijan
+Azerbaijan,1900,30.7,-
+Azerbaijan,2000,66.8,-
+Azerbaijan,2100,80.9,-
+Bahamas,1800,35.2,https://en.wikipedia.org/wiki/Bahamas
+Bahamas,1900,35.1,-
+Bahamas,2000,71.5,-
+Bahamas,2100,84,-
+Bahrain,1800,30.3,https://en.wikipedia.org/wiki/Bahrain
+Bahrain,1900,30.6,-
+Bahrain,2000,72.6,-
+Bahrain,2100,89.4,-
+Bangladesh,1800,25.5,https://en.wikipedia.org/wiki/Bangladesh
+Bangladesh,1900,21.3,-
+Bangladesh,2000,65.5,-
+Bangladesh,2100,87.6,-
+Barbados,1800,32.1,https://en.wikipedia.org/wiki/Barbados
+Barbados,1900,32.8,-
+Barbados,2000,74.8,-
+Barbados,2100,86.7,-
+Belarus,1800,36.2,https://en.wikipedia.org/wiki/Belarus
+Belarus,1900,36.1,-
+Belarus,2000,68.8,-
+Belarus,2100,84.8,-
+Belgium,1800,40,https://en.wikipedia.org/wiki/Belgium
+Belgium,1900,46.6,-
+Belgium,2000,77.8,-
+Belgium,2100,91.4,-
+Belize,1800,26.5,https://en.wikipedia.org/wiki/Belize
+Belize,1900,26.6,-
+Belize,2000,70.3,-
+Belize,2100,85.4,-
+Benin,1800,31,https://en.wikipedia.org/wiki/Benin
+Benin,1900,32,-
+Benin,2000,57.5,-
+Benin,2100,78.8,-
+Bhutan,1800,28.8,https://en.wikipedia.org/wiki/Bhutan
+Bhutan,1900,31.6,-
+Bhutan,2000,65.7,-
+Bhutan,2100,88.1,-
+Bolivia,1800,33,https://en.wikipedia.org/wiki/Bolivia
+Bolivia,1900,33.9,-
+Bolivia,2000,66.5,-
+Bolivia,2100,86.6,-
+Bosnia and Herzegovina,1800,35.1,https://en.wikipedia.org/wiki/Bosnia and Herzegovina
+Bosnia and Herzegovina,1900,35.4,-
+Bosnia and Herzegovina,2000,75.3,-
+Bosnia and Herzegovina,2100,87.4,-
+Botswana,1800,33.6,https://en.wikipedia.org/wiki/Botswana
+Botswana,1900,33.8,-
+Botswana,2000,54,-
+Botswana,2100,80.3,-
+Brazil,1800,32,https://en.wikipedia.org/wiki/Brazil
+Brazil,1900,32.3,-
+Brazil,2000,71.4,-
+Brazil,2100,88,-
+Brunei,1800,29.2,https://en.wikipedia.org/wiki/Brunei
+Brunei,1900,28.6,-
+Brunei,2000,73.8,-
+Brunei,2100,85.7,-
+Bulgaria,1800,35.8,https://en.wikipedia.org/wiki/Bulgaria
+Bulgaria,1900,40.2,-
+Bulgaria,2000,71.6,-
+Bulgaria,2100,85.3,-
+Burkina Faso,1800,29.2,https://en.wikipedia.org/wiki/Burkina Faso
+Burkina Faso,1900,30.4,-
+Burkina Faso,2000,52.4,-
+Burkina Faso,2100,78.4,-
+Burundi,1800,31.5,https://en.wikipedia.org/wiki/Burundi
+Burundi,1900,31.8,-
+Burundi,2000,44.9,-
+Burundi,2100,78.1,-
+Cambodia,1800,35,https://en.wikipedia.org/wiki/Cambodia
+Cambodia,1900,35.8,-
+Cambodia,2000,60.2,-
+Cambodia,2100,82.6,-
+Cameroon,1800,28.8,https://en.wikipedia.org/wiki/Cameroon
+Cameroon,1900,29.7,-
+Cameroon,2000,54.8,-
+Cameroon,2100,79.5,-
+Canada,1800,39,https://en.wikipedia.org/wiki/Canada
+Canada,1900,48.3,-
+Canada,2000,79.2,-
+Canada,2100,91.6,-
+Cape Verde,1800,33.8,https://en.wikipedia.org/wiki/Cape Verde
+Cape Verde,1900,35.2,-
+Cape Verde,2000,71.2,-
+Cape Verde,2100,88.9,-
+Central African Republic,1800,30,https://en.wikipedia.org/wiki/Central African Republic
+Central African Republic,1900,31.1,-
+Central African Republic,2000,44.3,-
+Central African Republic,2100,68.1,-
+Chad,1800,30.9,https://en.wikipedia.org/wiki/Chad
+Chad,1900,32.7,-
+Chad,2000,52.1,-
+Chad,2100,77.9,-
+Chile,1800,32,https://en.wikipedia.org/wiki/Chile
+Chile,1900,32.2,-
+Chile,2000,76.9,-
+Chile,2100,90.5,-
+China,1800,32,https://en.wikipedia.org/wiki/China
+China,1900,32,-
+China,2000,72.1,-
+China,2100,88.6,-
+Colombia,1800,32,https://en.wikipedia.org/wiki/Colombia
+Colombia,1900,32.8,-
+Colombia,2000,74.1,-
+Colombia,2100,92,-
+Comoros,1800,32.1,https://en.wikipedia.org/wiki/Comoros
+Comoros,1900,32.7,-
+Comoros,2000,61.6,-
+Comoros,2100,80.7,-
+"Congo, Dem. Rep.",1800,31.6,"https://en.wikipedia.org/wiki/Congo, Dem. Rep."
+"Congo, Dem. Rep.",1900,33,-
+"Congo, Dem. Rep.",2000,53.8,-
+"Congo, Dem. Rep.",2100,76.7,-
+"Congo, Rep.",1800,32.7,"https://en.wikipedia.org/wiki/Congo, Rep."
+"Congo, Rep.",1900,31.8,-
+"Congo, Rep.",2000,52.8,-
+"Congo, Rep.",2100,73.9,-
+Costa Rica,1800,30.2,https://en.wikipedia.org/wiki/Costa Rica
+Costa Rica,1900,35,-
+Costa Rica,2000,77.9,-
+Costa Rica,2100,90.2,-
+Cote d'Ivoire,1800,31.2,https://en.wikipedia.org/wiki/Cote d'Ivoire
+Cote d'Ivoire,1900,32.7,-
+Cote d'Ivoire,2000,52.3,-
+Cote d'Ivoire,2100,77.1,-
+Croatia,1800,36.1,https://en.wikipedia.org/wiki/Croatia
+Croatia,1900,36.1,-
+Croatia,2000,74.5,-
+Croatia,2100,89.3,-
+Cuba,1800,32.2,https://en.wikipedia.org/wiki/Cuba
+Cuba,1900,33.4,-
+Cuba,2000,76.8,-
+Cuba,2100,88.6,-
+Cyprus,1800,38.5,https://en.wikipedia.org/wiki/Cyprus
+Cyprus,1900,41.5,-
+Cyprus,2000,76.8,-
+Cyprus,2100,91.8,-
+Czech Republic,1800,35,https://en.wikipedia.org/wiki/Czech Republic
+Czech Republic,1900,40.2,-
+Czech Republic,2000,75,-
+Czech Republic,2100,89.3,-
+Denmark,1800,37.4,https://en.wikipedia.org/wiki/Denmark
+Denmark,1900,51.9,-
+Denmark,2000,77,-
+Denmark,2100,90.6,-
+Djibouti,1800,29.9,https://en.wikipedia.org/wiki/Djibouti
+Djibouti,1900,31.6,-
+Djibouti,2000,60.5,-
+Djibouti,2100,82.3,-
+Dominica,1800,NA,https://en.wikipedia.org/wiki/Dominica
+Dominica,1900,NA,-
+Dominica,2000,73.7,-
+Dominica,2100,NA,-
+Dominican Republic,1800,29.9,https://en.wikipedia.org/wiki/Dominican Republic
+Dominican Republic,1900,31.1,-
+Dominican Republic,2000,73.9,-
+Dominican Republic,2100,85.1,-
+Ecuador,1800,32.9,https://en.wikipedia.org/wiki/Ecuador
+Ecuador,1900,33.9,-
+Ecuador,2000,74.2,-
+Ecuador,2100,88.9,-
+Egypt,1800,33,https://en.wikipedia.org/wiki/Egypt
+Egypt,1900,32.7,-
+Egypt,2000,68.7,-
+Egypt,2100,82.3,-
+El Salvador,1800,28.7,https://en.wikipedia.org/wiki/El Salvador
+El Salvador,1900,29.2,-
+El Salvador,2000,72.4,-
+El Salvador,2100,87.4,-
+Equatorial Guinea,1800,29.8,https://en.wikipedia.org/wiki/Equatorial Guinea
+Equatorial Guinea,1900,30.8,-
+Equatorial Guinea,2000,55.6,-
+Equatorial Guinea,2100,81.8,-
+Eritrea,1800,30.2,https://en.wikipedia.org/wiki/Eritrea
+Eritrea,1900,30.7,-
+Eritrea,2000,53.3,-
+Eritrea,2100,77.6,-
+Estonia,1800,36.1,https://en.wikipedia.org/wiki/Estonia
+Estonia,1900,43.1,-
+Estonia,2000,71,-
+Estonia,2100,88.2,-
+Ethiopia,1800,29.7,https://en.wikipedia.org/wiki/Ethiopia
+Ethiopia,1900,29.7,-
+Ethiopia,2000,50.8,-
+Ethiopia,2100,85.1,-
+Fiji,1800,26.1,https://en.wikipedia.org/wiki/Fiji
+Fiji,1900,27,-
+Fiji,2000,65.9,-
+Fiji,2100,79,-
+Finland,1800,36.6,https://en.wikipedia.org/wiki/Finland
+Finland,1900,41.8,-
+Finland,2000,77.8,-
+Finland,2100,91.3,-
+France,1800,34,https://en.wikipedia.org/wiki/France
+France,1900,45.1,-
+France,2000,79.1,-
+France,2100,92.5,-
+Gabon,1800,30.6,https://en.wikipedia.org/wiki/Gabon
+Gabon,1900,31.8,-
+Gabon,2000,59.3,-
+Gabon,2100,80.3,-
+Gambia,1800,28.8,https://en.wikipedia.org/wiki/Gambia
+Gambia,1900,32.4,-
+Gambia,2000,61.7,-
+Gambia,2100,80.6,-
+Georgia,1800,31.9,https://en.wikipedia.org/wiki/Georgia
+Georgia,1900,33.4,-
+Georgia,2000,73.1,-
+Georgia,2100,84.1,-
+Germany,1800,38.4,https://en.wikipedia.org/wiki/Germany
+Germany,1900,43.9,-
+Germany,2000,78.3,-
+Germany,2100,90.7,-
+Ghana,1800,28,https://en.wikipedia.org/wiki/Ghana
+Ghana,1900,29.1,-
+Ghana,2000,59.4,-
+Ghana,2100,79,-
+Greece,1800,36.6,https://en.wikipedia.org/wiki/Greece
+Greece,1900,40.5,-
+Greece,2000,78.8,-
+Greece,2100,90.8,-
+Grenada,1800,31.4,https://en.wikipedia.org/wiki/Grenada
+Grenada,1900,37.7,-
+Grenada,2000,73.9,-
+Grenada,2100,84.8,-
+Guatemala,1800,25.8,https://en.wikipedia.org/wiki/Guatemala
+Guatemala,1900,25.4,-
+Guatemala,2000,68,-
+Guatemala,2100,85.6,-
+Guinea,1800,29.5,https://en.wikipedia.org/wiki/Guinea
+Guinea,1900,32.6,-
+Guinea,2000,54.4,-
+Guinea,2100,74.6,-
+Guinea-Bissau,1800,32,https://en.wikipedia.org/wiki/Guinea-Bissau
+Guinea-Bissau,1900,31.1,-
+Guinea-Bissau,2000,52,-
+Guinea-Bissau,2100,75.5,-
+Guyana,1800,31.1,https://en.wikipedia.org/wiki/Guyana
+Guyana,1900,31.5,-
+Guyana,2000,66.2,-
+Guyana,2100,79.2,-
+Haiti,1800,29,https://en.wikipedia.org/wiki/Haiti
+Haiti,1900,28.8,-
+Haiti,2000,57.4,-
+Haiti,2100,79.4,-
+Honduras,1800,33.9,https://en.wikipedia.org/wiki/Honduras
+Honduras,1900,35.1,-
+Honduras,2000,70.4,-
+Honduras,2100,85.6,-
+Hungary,1800,36,https://en.wikipedia.org/wiki/Hungary
+Hungary,1900,37.3,-
+Hungary,2000,71.8,-
+Hungary,2100,87.5,-
+Iceland,1800,42.9,https://en.wikipedia.org/wiki/Iceland
+Iceland,1900,46.6,-
+Iceland,2000,80.1,-
+Iceland,2100,92.2,-
+India,1800,25.4,https://en.wikipedia.org/wiki/India
+India,1900,18.4,-
+India,2000,62.9,-
+India,2100,81.8,-
+Indonesia,1800,30,https://en.wikipedia.org/wiki/Indonesia
+Indonesia,1900,30.3,-
+Indonesia,2000,67.3,-
+Indonesia,2100,84.3,-
+Iran,1800,25.6,https://en.wikipedia.org/wiki/Iran
+Iran,1900,26.3,-
+Iran,2000,73.6,-
+Iran,2100,89.1,-
+Iraq,1800,31.2,https://en.wikipedia.org/wiki/Iraq
+Iraq,1900,31.6,-
+Iraq,2000,66.7,-
+Iraq,2100,88.3,-
+Ireland,1800,38.3,https://en.wikipedia.org/wiki/Ireland
+Ireland,1900,49.2,-
+Ireland,2000,76.6,-
+Ireland,2100,91.8,-
+Israel,1800,32,https://en.wikipedia.org/wiki/Israel
+Israel,1900,32,-
+Israel,2000,78.7,-
+Israel,2100,92.7,-
+Italy,1800,29.7,https://en.wikipedia.org/wiki/Italy
+Italy,1900,41.7,-
+Italy,2000,79.6,-
+Italy,2100,92.9,-
+Jamaica,1800,34.2,https://en.wikipedia.org/wiki/Jamaica
+Jamaica,1900,38,-
+Jamaica,2000,74,-
+Jamaica,2100,84.8,-
+Japan,1800,36.4,https://en.wikipedia.org/wiki/Japan
+Japan,1900,38.7,-
+Japan,2000,81.4,-
+Japan,2100,93.7,-
+Jordan,1800,31.7,https://en.wikipedia.org/wiki/Jordan
+Jordan,1900,31.9,-
+Jordan,2000,72.8,-
+Jordan,2100,90.8,-
+Kazakhstan,1800,26.2,https://en.wikipedia.org/wiki/Kazakhstan
+Kazakhstan,1900,28.4,-
+Kazakhstan,2000,65.5,-
+Kazakhstan,2100,83.6,-
+Kenya,1800,25.5,https://en.wikipedia.org/wiki/Kenya
+Kenya,1900,26.4,-
+Kenya,2000,55.6,-
+Kenya,2100,80.1,-
+Kiribati,1800,24.9,https://en.wikipedia.org/wiki/Kiribati
+Kiribati,1900,25.4,-
+Kiribati,2000,59.3,-
+Kiribati,2100,75.3,-
+Kuwait,1800,26,https://en.wikipedia.org/wiki/Kuwait
+Kuwait,1900,26.4,-
+Kuwait,2000,78.6,-
+Kuwait,2100,93.8,-
+Kyrgyz Republic,1800,23.9,https://en.wikipedia.org/wiki/Kyrgyz Republic
+Kyrgyz Republic,1900,25.8,-
+Kyrgyz Republic,2000,66.9,-
+Kyrgyz Republic,2100,84.6,-
+Lao,1800,31.9,https://en.wikipedia.org/wiki/Lao
+Lao,1900,31,-
+Lao,2000,57.1,-
+Lao,2100,81.5,-
+Latvia,1800,33,https://en.wikipedia.org/wiki/Latvia
+Latvia,1900,46.2,-
+Latvia,2000,70.7,-
+Latvia,2100,85.7,-
+Lebanon,1800,29.7,https://en.wikipedia.org/wiki/Lebanon
+Lebanon,1900,29.9,-
+Lebanon,2000,75.4,-
+Lebanon,2100,88.4,-
+Lesotho,1800,32.8,https://en.wikipedia.org/wiki/Lesotho
+Lesotho,1900,34.2,-
+Lesotho,2000,48.9,-
+Lesotho,2100,75,-
+Liberia,1800,31.1,https://en.wikipedia.org/wiki/Liberia
+Liberia,1900,32.9,-
+Liberia,2000,54.3,-
+Liberia,2100,77.6,-
+Libya,1800,33.1,https://en.wikipedia.org/wiki/Libya
+Libya,1900,34.7,-
+Libya,2000,73.2,-
+Libya,2100,84.8,-
+Lithuania,1800,28.9,https://en.wikipedia.org/wiki/Lithuania
+Lithuania,1900,41.7,-
+Lithuania,2000,72.3,-
+Lithuania,2100,85.7,-
+Luxembourg,1800,36.9,https://en.wikipedia.org/wiki/Luxembourg
+Luxembourg,1900,47.6,-
+Luxembourg,2000,78,-
+Luxembourg,2100,91.6,-
+Madagascar,1800,30.5,https://en.wikipedia.org/wiki/Madagascar
+Madagascar,1900,31.7,-
+Madagascar,2000,58.9,-
+Madagascar,2100,78.5,-
+Malawi,1800,30.3,https://en.wikipedia.org/wiki/Malawi
+Malawi,1900,30.9,-
+Malawi,2000,44.6,-
+Malawi,2100,81.4,-
+Malaysia,1800,30.6,https://en.wikipedia.org/wiki/Malaysia
+Malaysia,1900,30.6,-
+Malaysia,2000,72.8,-
+Malaysia,2100,85.4,-
+Maldives,1800,32.6,https://en.wikipedia.org/wiki/Maldives
+Maldives,1900,31.9,-
+Maldives,2000,72.3,-
+Maldives,2100,94.8,-
+Mali,1800,26.4,https://en.wikipedia.org/wiki/Mali
+Mali,1900,28.2,-
+Mali,2000,53.3,-
+Mali,2100,76.5,-
+Malta,1800,28.7,https://en.wikipedia.org/wiki/Malta
+Malta,1900,41.9,-
+Malta,2000,78.5,-
+Malta,2100,90.7,-
+Marshall Islands,1800,NA,https://en.wikipedia.org/wiki/Marshall Islands
+Marshall Islands,1900,NA,-
+Marshall Islands,2000,61.7,-
+Marshall Islands,2100,NA,-
+Mauritania,1800,32,https://en.wikipedia.org/wiki/Mauritania
+Mauritania,1900,32.9,-
+Mauritania,2000,63.5,-
+Mauritania,2100,82.2,-
+Mauritius,1800,28.7,https://en.wikipedia.org/wiki/Mauritius
+Mauritius,1900,26.1,-
+Mauritius,2000,72.2,-
+Mauritius,2100,86.2,-
+Mexico,1800,26.9,https://en.wikipedia.org/wiki/Mexico
+Mexico,1900,27.7,-
+Mexico,2000,74.6,-
+Mexico,2100,87.2,-
+"Micronesia, Fed. Sts.",1800,26.7,"https://en.wikipedia.org/wiki/Micronesia, Fed. Sts."
+"Micronesia, Fed. Sts.",1900,26.5,-
+"Micronesia, Fed. Sts.",2000,65.2,-
+"Micronesia, Fed. Sts.",2100,76,-
+Moldova,1800,33.1,https://en.wikipedia.org/wiki/Moldova
+Moldova,1900,32.9,-
+Moldova,2000,68.6,-
+Moldova,2100,84.1,-
+Mongolia,1800,31.8,https://en.wikipedia.org/wiki/Mongolia
+Mongolia,1900,31.5,-
+Mongolia,2000,62,-
+Mongolia,2100,82.5,-
+Montenegro,1800,35.4,https://en.wikipedia.org/wiki/Montenegro
+Montenegro,1900,35.7,-
+Montenegro,2000,73.9,-
+Montenegro,2100,86.7,-
+Morocco,1800,33.1,https://en.wikipedia.org/wiki/Morocco
+Morocco,1900,33.5,-
+Morocco,2000,69.3,-
+Morocco,2100,85.8,-
+Mozambique,1800,30.3,https://en.wikipedia.org/wiki/Mozambique
+Mozambique,1900,32.1,-
+Mozambique,2000,50.5,-
+Mozambique,2100,76.9,-
+Myanmar,1800,30.8,https://en.wikipedia.org/wiki/Myanmar
+Myanmar,1900,29.9,-
+Myanmar,2000,58.7,-
+Myanmar,2100,81.1,-
+Namibia,1800,32.4,https://en.wikipedia.org/wiki/Namibia
+Namibia,1900,33.5,-
+Namibia,2000,54.5,-
+Namibia,2100,82.5,-
+Nepal,1800,32.8,https://en.wikipedia.org/wiki/Nepal
+Nepal,1900,34.4,-
+Nepal,2000,65.7,-
+Nepal,2100,84.9,-
+Netherlands,1800,39.9,https://en.wikipedia.org/wiki/Netherlands
+Netherlands,1900,48.4,-
+Netherlands,2000,78.1,-
+Netherlands,2100,91,-
+New Zealand,1800,34,https://en.wikipedia.org/wiki/New Zealand
+New Zealand,1900,47.4,-
+New Zealand,2000,78.3,-
+New Zealand,2100,91.5,-
+Nicaragua,1800,25.4,https://en.wikipedia.org/wiki/Nicaragua
+Nicaragua,1900,25.9,-
+Nicaragua,2000,75,-
+Nicaragua,2100,92.6,-
+Niger,1800,30.8,https://en.wikipedia.org/wiki/Niger
+Niger,1900,32.5,-
+Niger,2000,51.8,-
+Niger,2100,77.3,-
+Nigeria,1800,30.4,https://en.wikipedia.org/wiki/Nigeria
+Nigeria,1900,33.8,-
+Nigeria,2000,55.2,-
+Nigeria,2100,83.7,-
+North Korea,1800,26,https://en.wikipedia.org/wiki/North Korea
+North Korea,1900,27,-
+North Korea,2000,62.1,-
+North Korea,2100,84.9,-
+North Macedonia,1800,36.1,https://en.wikipedia.org/wiki/North Macedonia
+North Macedonia,1900,36.5,-
+North Macedonia,2000,73.9,-
+North Macedonia,2100,87.2,-
+Norway,1800,37.9,https://en.wikipedia.org/wiki/Norway
+Norway,1900,53.4,-
+Norway,2000,78.6,-
+Norway,2100,91.9,-
+Oman,1800,32.3,https://en.wikipedia.org/wiki/Oman
+Oman,1900,32.1,-
+Oman,2000,73,-
+Oman,2100,89.1,-
+Pakistan,1800,25.8,https://en.wikipedia.org/wiki/Pakistan
+Pakistan,1900,21.4,-
+Pakistan,2000,61.9,-
+Pakistan,2100,77.6,-
+Palestine,1800,32.1,https://en.wikipedia.org/wiki/Palestine
+Palestine,1900,33.2,-
+Palestine,2000,70.5,-
+Palestine,2100,88.7,-
+Panama,1800,32.9,https://en.wikipedia.org/wiki/Panama
+Panama,1900,33.4,-
+Panama,2000,77.4,-
+Panama,2100,90.5,-
+Papua New Guinea,1800,31.5,https://en.wikipedia.org/wiki/Papua New Guinea
+Papua New Guinea,1900,32.8,-
+Papua New Guinea,2000,56,-
+Papua New Guinea,2100,68.6,-
+Paraguay,1800,35.5,https://en.wikipedia.org/wiki/Paraguay
+Paraguay,1900,36.1,-
+Paraguay,2000,74.5,-
+Paraguay,2100,86.6,-
+Peru,1800,35.7,https://en.wikipedia.org/wiki/Peru
+Peru,1900,34.6,-
+Peru,2000,74.7,-
+Peru,2100,93.6,-
+Philippines,1800,30.9,https://en.wikipedia.org/wiki/Philippines
+Philippines,1900,31.3,-
+Philippines,2000,69.3,-
+Philippines,2100,80.9,-
+Poland,1800,35.9,https://en.wikipedia.org/wiki/Poland
+Poland,1900,40.5,-
+Poland,2000,73.9,-
+Poland,2100,88.6,-
+Portugal,1800,35.6,https://en.wikipedia.org/wiki/Portugal
+Portugal,1900,35.6,-
+Portugal,2000,76.7,-
+Portugal,2100,91.6,-
+Qatar,1800,30.8,https://en.wikipedia.org/wiki/Qatar
+Qatar,1900,30.2,-
+Qatar,2000,74.1,-
+Qatar,2100,90.4,-
+Romania,1800,35.7,https://en.wikipedia.org/wiki/Romania
+Romania,1900,35.7,-
+Romania,2000,71.1,-
+Romania,2100,85.9,-
+Russia,1800,29.6,https://en.wikipedia.org/wiki/Russia
+Russia,1900,30.8,-
+Russia,2000,65.5,-
+Russia,2100,83.7,-
+Rwanda,1800,31.8,https://en.wikipedia.org/wiki/Rwanda
+Rwanda,1900,25.4,-
+Rwanda,2000,49.6,-
+Rwanda,2100,83.7,-
+Samoa,1800,25.4,https://en.wikipedia.org/wiki/Samoa
+Samoa,1900,27.1,-
+Samoa,2000,71.7,-
+Samoa,2100,83.9,-
+Sao Tome and Principe,1800,31,https://en.wikipedia.org/wiki/Sao Tome and Principe
+Sao Tome and Principe,1900,31.4,-
+Sao Tome and Principe,2000,64.6,-
+Sao Tome and Principe,2100,79.3,-
+Saudi Arabia,1800,32.1,https://en.wikipedia.org/wiki/Saudi Arabia
+Saudi Arabia,1900,34.2,-
+Saudi Arabia,2000,74.7,-
+Saudi Arabia,2100,88.2,-
+Senegal,1800,25.2,https://en.wikipedia.org/wiki/Senegal
+Senegal,1900,26.9,-
+Senegal,2000,60.6,-
+Senegal,2100,82.2,-
+Serbia,1800,35.5,https://en.wikipedia.org/wiki/Serbia
+Serbia,1900,35.6,-
+Serbia,2000,72.1,-
+Serbia,2100,86.5,-
+Seychelles,1800,37,https://en.wikipedia.org/wiki/Seychelles
+Seychelles,1900,45,-
+Seychelles,2000,71.5,-
+Seychelles,2100,85,-
+Sierra Leone,1800,25.1,https://en.wikipedia.org/wiki/Sierra Leone
+Sierra Leone,1900,27.4,-
+Sierra Leone,2000,50.9,-
+Sierra Leone,2100,79.7,-
+Singapore,1800,29.1,https://en.wikipedia.org/wiki/Singapore
+Singapore,1900,34.2,-
+Singapore,2000,79.3,-
+Singapore,2100,94.7,-
+Slovak Republic,1800,36.4,https://en.wikipedia.org/wiki/Slovak Republic
+Slovak Republic,1900,37.9,-
+Slovak Republic,2000,73.5,-
+Slovak Republic,2100,87.8,-
+Slovenia,1800,36.6,https://en.wikipedia.org/wiki/Slovenia
+Slovenia,1900,36.4,-
+Slovenia,2000,76,-
+Slovenia,2100,91.2,-
+Solomon Islands,1800,25.1,https://en.wikipedia.org/wiki/Solomon Islands
+Solomon Islands,1900,25.1,-
+Solomon Islands,2000,61.5,-
+Solomon Islands,2100,78.7,-
+Somalia,1800,29.4,https://en.wikipedia.org/wiki/Somalia
+Somalia,1900,31.2,-
+Somalia,2000,52.5,-
+Somalia,2100,73.9,-
+South Africa,1800,33.5,https://en.wikipedia.org/wiki/South Africa
+South Africa,1900,34.5,-
+South Africa,2000,55.6,-
+South Africa,2100,79.8,-
+South Korea,1800,25.8,https://en.wikipedia.org/wiki/South Korea
+South Korea,1900,25.9,-
+South Korea,2000,76.3,-
+South Korea,2100,92.8,-
+South Sudan,1800,26.7,https://en.wikipedia.org/wiki/South Sudan
+South Sudan,1900,29.6,-
+South Sudan,2000,54.4,-
+South Sudan,2100,73.3,-
+Spain,1800,29.5,https://en.wikipedia.org/wiki/Spain
+Spain,1900,34.7,-
+Spain,2000,79.4,-
+Spain,2100,92.6,-
+Sri Lanka,1800,32.6,https://en.wikipedia.org/wiki/Sri Lanka
+Sri Lanka,1900,32.5,-
+Sri Lanka,2000,71.6,-
+Sri Lanka,2100,89,-
+St. Lucia,1800,28,https://en.wikipedia.org/wiki/St. Lucia
+St. Lucia,1900,28.2,-
+St. Lucia,2000,73.8,-
+St. Lucia,2100,85.7,-
+St. Vincent and the Grenadines,1800,26,https://en.wikipedia.org/wiki/St. Vincent and the Grenadines
+St. Vincent and the Grenadines,1900,26,-
+St. Vincent and the Grenadines,2000,71.2,-
+St. Vincent and the Grenadines,2100,83,-
+Sudan,1800,31.4,https://en.wikipedia.org/wiki/Sudan
+Sudan,1900,31.5,-
+Sudan,2000,63.4,-
+Sudan,2100,84.4,-
+Suriname,1800,32.9,https://en.wikipedia.org/wiki/Suriname
+Suriname,1900,32.9,-
+Suriname,2000,69.5,-
+Suriname,2100,83.3,-
+Swaziland,1800,32.3,https://en.wikipedia.org/wiki/Swaziland
+Swaziland,1900,32.9,-
+Swaziland,2000,48.3,-
+Swaziland,2100,76.2,-
+Sweden,1800,32.2,https://en.wikipedia.org/wiki/Sweden
+Sweden,1900,52.3,-
+Sweden,2000,79.8,-
+Sweden,2100,92.1,-
+Switzerland,1800,38,https://en.wikipedia.org/wiki/Switzerland
+Switzerland,1900,47.5,-
+Switzerland,2000,80.1,-
+Switzerland,2100,93.6,-
+Syria,1800,31.1,https://en.wikipedia.org/wiki/Syria
+Syria,1900,31.8,-
+Syria,2000,72.5,-
+Syria,2100,85,-
+Tajikistan,1800,24.2,https://en.wikipedia.org/wiki/Tajikistan
+Tajikistan,1900,25.9,-
+Tajikistan,2000,67.8,-
+Tajikistan,2100,82.7,-
+Tanzania,1800,32.2,https://en.wikipedia.org/wiki/Tanzania
+Tanzania,1900,33.4,-
+Tanzania,2000,53.5,-
+Tanzania,2100,82.7,-
+Thailand,1800,30.4,https://en.wikipedia.org/wiki/Thailand
+Thailand,1900,30.9,-
+Thailand,2000,71.8,-
+Thailand,2100,90,-
+Timor-Leste,1800,28.9,https://en.wikipedia.org/wiki/Timor-Leste
+Timor-Leste,1900,30.3,-
+Timor-Leste,2000,65.3,-
+Timor-Leste,2100,83.2,-
+Togo,1800,31.3,https://en.wikipedia.org/wiki/Togo
+Togo,1900,32.4,-
+Togo,2000,56.9,-
+Togo,2100,79,-
+Tonga,1800,28.2,https://en.wikipedia.org/wiki/Tonga
+Tonga,1900,28.6,-
+Tonga,2000,70.7,-
+Tonga,2100,81.6,-
+Trinidad and Tobago,1800,32.9,https://en.wikipedia.org/wiki/Trinidad and Tobago
+Trinidad and Tobago,1900,39,-
+Trinidad and Tobago,2000,70.4,-
+Trinidad and Tobago,2100,85.2,-
+Tunisia,1800,28.8,https://en.wikipedia.org/wiki/Tunisia
+Tunisia,1900,30,-
+Tunisia,2000,74.3,-
+Tunisia,2100,90.1,-
+Turkey,1800,35,https://en.wikipedia.org/wiki/Turkey
+Turkey,1900,35.7,-
+Turkey,2000,74.1,-
+Turkey,2100,91.8,-
+Turkmenistan,1800,24,https://en.wikipedia.org/wiki/Turkmenistan
+Turkmenistan,1900,24.3,-
+Turkmenistan,2000,66.7,-
+Turkmenistan,2100,80.8,-
+Uganda,1800,25.3,https://en.wikipedia.org/wiki/Uganda
+Uganda,1900,25.3,-
+Uganda,2000,49.1,-
+Uganda,2100,82.2,-
+Ukraine,1800,36.6,https://en.wikipedia.org/wiki/Ukraine
+Ukraine,1900,36.4,-
+Ukraine,2000,68,-
+Ukraine,2100,81.6,-
+United Arab Emirates,1800,30.7,https://en.wikipedia.org/wiki/United Arab Emirates
+United Arab Emirates,1900,31,-
+United Arab Emirates,2000,71.8,-
+United Arab Emirates,2100,83,-
+United Kingdom,1800,38.6,https://en.wikipedia.org/wiki/United Kingdom
+United Kingdom,1900,46.3,-
+United Kingdom,2000,78,-
+United Kingdom,2100,90.6,-
+United States,1800,39.4,https://en.wikipedia.org/wiki/United States
+United States,1900,49,-
+United States,2000,76.9,-
+United States,2100,88.5,-
+Uruguay,1800,32.9,https://en.wikipedia.org/wiki/Uruguay
+Uruguay,1900,32.9,-
+Uruguay,2000,74.6,-
+Uruguay,2100,87.5,-
+Uzbekistan,1800,26.9,https://en.wikipedia.org/wiki/Uzbekistan
+Uzbekistan,1900,29,-
+Uzbekistan,2000,67.3,-
+Uzbekistan,2100,80,-
+Vanuatu,1800,24.3,https://en.wikipedia.org/wiki/Vanuatu
+Vanuatu,1900,25,-
+Vanuatu,2000,63.4,-
+Vanuatu,2100,74.5,-
+Venezuela,1800,32.2,https://en.wikipedia.org/wiki/Venezuela
+Venezuela,1900,32.4,-
+Venezuela,2000,74,-
+Venezuela,2100,87.3,-
+Vietnam,1800,32,https://en.wikipedia.org/wiki/Vietnam
+Vietnam,1900,31.2,-
+Vietnam,2000,71.5,-
+Vietnam,2100,85.3,-
+Yemen,1800,23.4,https://en.wikipedia.org/wiki/Yemen
+Yemen,1900,23.5,-
+Yemen,2000,63.3,-
+Yemen,2100,78.4,-
+Zambia,1800,32.6,https://en.wikipedia.org/wiki/Zambia
+Zambia,1900,33.6,-
+Zambia,2000,46,-
+Zambia,2100,78.1,-
+Zimbabwe,1800,33.7,https://en.wikipedia.org/wiki/Zimbabwe
+Zimbabwe,1900,34.1,-
+Zimbabwe,2000,46.6,-
+Zimbabwe,2100,75.7,-

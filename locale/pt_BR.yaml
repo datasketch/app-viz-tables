@@ -56,3 +56,7 @@ jump: Salto
 width_le: Largura fixa
 full_width: Largura completa
 info_gb: Agrupar tabela por categorias das colunas escolhidas
+styles: Estilos
+color_header: Cor fundo títulos
+font_color_header: Cor texto títulos
+hyperlink: URLs como hiperlinks

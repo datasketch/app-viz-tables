@@ -56,3 +56,7 @@ jump: Jump
 width_le: Fixed width
 full_width: Full width
 info_gb: Group table by categories of chosen columns
+styles: Styles
+color_header: Headers background
+font_color_header: Headers text color
+hyperlink: URLs as hyperlinks

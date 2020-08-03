@@ -23,8 +23,31 @@ color:
   input_params:
     label: color
     colors:
-      - "#414141" 
+      #- "#414141" 
+      - "#50585D"
     max_colors: 1
+color_header:
+  show: true
+  input_type: colorPaletteInput
+  input_params:
+    label: color_header
+    colors:
+      - "#E2EAED"
+    max_colors: 1
+font_color_header:
+  show: true
+  input_type: colorPaletteInput
+  input_params:
+    label: font_color_header
+    colors:
+      - "#8097A4"
+    max_colors: 1
+hyperlink:
+  show: true
+  input_type: checkboxInput
+  input_params:
+    label: hyperlink
+    value: true
 height:
   show: true
   input_type: numericInput

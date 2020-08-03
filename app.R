@@ -36,7 +36,7 @@ ui <- panelsPage(useShi18ny(),
 server <- function(input, output, session) {
   
   i18n <- list(defaultLang = "en", availableLangs = c("es", "en", "pt_BR"))
-  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = FALSE)
+  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = TRUE)
   observeEvent(lang(), {uiLangUpdate(input$shi18ny_ui_classes, lang())})  
   
   output$table_input <- renderUI({
@@ -121,7 +121,19 @@ server <- function(input, output, session) {
     if (!is.null(input$page_type)) {
       pt <- input$page_type 
     }
-    
+    if (sum(input$hyperlink) > 0) {
+      hlink <- function(value, index, name) {
+        if (grepl("^www\\.|^http(s|)://", dt()[index, name])) {
+          print("d")
+          shiny::tags$a(href = value, target = "_blank", value)
+        } else {
+          print("f")
+          value
+        }
+      }
+    } else {
+      hlink <- NULL
+    }
     st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
     safe_reactable <- purrr::safely(reactable)
     safe_reactable(dt(),
@@ -158,6 +170,9 @@ server <- function(input, output, session) {
                    
                    pageSizeOptions = seq(5, nrow(dt()), 5),
                    
+                   defaultColDef = colDef(cell = hlink,
+                                          headerStyle = list(background = input$color_header,
+                                                             color = input$font_color_header)),
                    style = st)
   })
   
