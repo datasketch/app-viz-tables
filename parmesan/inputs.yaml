@@ -48,6 +48,9 @@ hyperlink:
   input_params:
     label: hyperlink
     value: true
+  input_info:
+    icon: info-circle
+    text: info_hk
 height:
   show: true
   input_type: numericInput
@@ -101,6 +104,7 @@ outlined:
     label: outlined
     on_label: ""
     off_label: ""
+    value: true
 bordered:
   show: true
   show_if:

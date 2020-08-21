@@ -5,8 +5,8 @@ account: datasketch
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2554980
-bundleId: 3471039
+bundleId: 3543546
 url: https://datasketch.shinyapps.io/app-viz-tables/
-when: 1596493213.55416
+when: 1598052271.46703
 asMultiple: FALSE
 asStatic: FALSE

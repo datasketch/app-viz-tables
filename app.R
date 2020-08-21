@@ -4,6 +4,7 @@ library(shinyinvoer)
 library(shi18ny)
 library(V8)
 library(dsmodules)
+library(dspins)
 library(hotr)
 library(tidyverse)
 library(reactable)
@@ -36,13 +37,14 @@ ui <- panelsPage(useShi18ny(),
 server <- function(input, output, session) {
   
   i18n <- list(defaultLang = "en", availableLangs = c("es", "en", "pt_BR"))
-  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = TRUE)
+  lang <- callModule(langSelector, "lang", i18n = i18n, showSelector = FALSE)
   observeEvent(lang(), {uiLangUpdate(input$shi18ny_ui_classes, lang())})  
   
   output$table_input <- renderUI({
     choices <- c("sampleData", "pasted", "fileUpload", "googleSheets")
     names(choices) <- i_(c("sample", "paste", "upload", "google"), lang = lang())
     tableInputUI("initial_data",
+                 label = "",
                  choices = choices,
                  # selected is important for inputs not be re-initialized
                  selected = ifelse(is.null(input$`initial_data-tableInput`), "sampleData", input$`initial_data-tableInput`))
@@ -71,9 +73,7 @@ server <- function(input, output, session) {
   })
   
   inputData <- eventReactive(list(labels(), input$`initial_data-tableInput`), {
-    do.call(callModule, c(tableInput,
-                          "initial_data",
-                          labels()))
+    do.call(tableInputServer, c("initial_data", labels()))
   })
   
   output$data_preview <- renderUI({
@@ -124,10 +124,8 @@ server <- function(input, output, session) {
     if (sum(input$hyperlink) > 0) {
       hlink <- function(value, index, name) {
         if (grepl("^www\\.|^http(s|)://", dt()[index, name])) {
-          print("d")
           shiny::tags$a(href = value, target = "_blank", value)
         } else {
-          print("f")
           value
         }
       }
@@ -180,8 +178,14 @@ server <- function(input, output, session) {
     lb <- i_("download_table", lang())
     dw <- i_("download", lang())
     gl <- i_("get_link", lang())
-    downloadHtmlwidgetUI("download_data_button", dropdownLabel = lb, text = dw, formats = c("link", "html"),
-                         display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl)
+    mb <- list(textInput("name", i_("gl_name", lang())),
+               textInput("description", i_("gl_description", lang())),
+               selectInput("license", i_("gl_license", lang()), choices = c("CC0", "CC-BY")),
+               selectizeInput("tags", i_("gl_tags", lang()), choices = list("No tag" = "no-tag"), multiple = TRUE, options = list(plugins= list('remove_button', 'drag_drop'))),
+               selectizeInput("category", i_("gl_category", lang()), choices = list("No category" = "no-category")))
+    downloadDsUI("download_data_button", dropdownLabel = lb, text = dw, formats = "html",
+                 display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl, modalBody = mb,
+                 modalButtonLabel = i_("gl_save", lang()), modalLinkLabel = i_("gl_url", lang()), modalIframeLabel = i_("gl_iframe", lang()))
   })
   
   # renderizando reactable
@@ -199,8 +203,36 @@ server <- function(input, output, session) {
     rctbl()$result
   })
   
+  # url params
+  par <- list(user_name = "brandon", org_name = NULL)
+  url_par <- reactive({
+    url_params(par, session)
+  })
+  
+  # prepare element for pining
+  ds_v <- reactive({
+    req(rctbl()$result)
+    dsviz(rctbl()$result,
+          name = input$`download_data_button-modal_form-name`,
+          slug = input$`download_data_button-modal_form-name`, 
+          description = input$`download_data_button-modal_form-description`,
+          license = input$`download_data_button-modal_form-license`,
+          tags = input$`download_data_button-modal_form-tags`,
+          category = input$`download_data_button-modal_form-category`)
+  })
+  
+  
   # descargas
-  callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
+  observe({
+    dspin_urls_0 <- function(element_ = NULL, user_name = NULL, org_name = NULL, overwrite = FALSE, ...) {
+      element <- dsmodules:::eval_reactives(element_)
+      dspin_urls(element = element, user_name = user_name, org_name = org_name, overwrite = overwrite, ...)
+    }
+    downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
+                     modalFunction = dspin_urls_0, element_ = ds_v(), 
+                     user_name = url_par()$inputs$user_name, org_name = url_par()$inputs$org_name)
+  })
+  # callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
   
 }
 
