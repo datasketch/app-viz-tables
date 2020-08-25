@@ -9,6 +9,7 @@ library(hotr)
 library(tidyverse)
 library(reactable)
 library(shinycustomloader)
+library(homodatum)
 
 # unidades (width, height pixeles)
 
@@ -185,7 +186,8 @@ server <- function(input, output, session) {
                selectizeInput("category", i_("gl_category", lang()), choices = list("No category" = "no-category")))
     downloadDsUI("download_data_button", dropdownLabel = lb, text = dw, formats = "html",
                  display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl, modalBody = mb,
-                 modalButtonLabel = i_("gl_save", lang()), modalLinkLabel = i_("gl_url", lang()), modalIframeLabel = i_("gl_iframe", lang()))
+                 modalButtonLabel = i_("gl_save", lang()), modalLinkLabel = i_("gl_url", lang()), modalIframeLabel = i_("gl_iframe", lang()),
+                 modalFormatChoices = c("HTML" = "html", "PNG" = "png"))
   })
   
   # renderizando reactable
@@ -212,9 +214,15 @@ server <- function(input, output, session) {
   # prepare element for pining
   ds_v <- reactive({
     req(rctbl()$result)
+    dspins_user_board_connect(url_par()$inputs$user_name)
+    Sys.setlocale(locale = "en_US.UTF-8")
+    nm <-input$`download_data_button-modal_form-name`
+    if (!nzchar(input$`download_data_button-modal_form-name`)) {
+      nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
+      updateTextInput(session, "download_data_button-modal_form-name", value = nm)
+    } 
     dsviz(rctbl()$result,
-          name = input$`download_data_button-modal_form-name`,
-          slug = input$`download_data_button-modal_form-name`, 
+          name = nm,
           description = input$`download_data_button-modal_form-description`,
           license = input$`download_data_button-modal_form-license`,
           tags = input$`download_data_button-modal_form-tags`,
@@ -224,15 +232,11 @@ server <- function(input, output, session) {
   
   # descargas
   observe({
-    dspin_urls_0 <- function(element_ = NULL, user_name = NULL, org_name = NULL, overwrite = FALSE, ...) {
-      element <- dsmodules:::eval_reactives(element_)
-      dspin_urls(element = element, user_name = user_name, org_name = org_name, overwrite = overwrite, ...)
-    }
     downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
-                     modalFunction = dspin_urls_0, element_ = ds_v(), 
-                     user_name = url_par()$inputs$user_name, org_name = url_par()$inputs$org_name)
+                     modalFunction = pin, ds_v(),
+                     bucket_id = url_par()$inputs$user_name)
   })
-  # callModule(downloadHtmlwidget, "download_data_button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
+  # callModule(downloadHtmlwidget, "download_data _button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
   
 }
 
