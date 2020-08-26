@@ -206,17 +206,15 @@ server <- function(input, output, session) {
   })
   
   # url params
-  par <- list(user_name = "brandon", org_name = NULL)
+  par <- list(user_name = "brandon", org_name = NULL, u = 2)
   url_par <- reactive({
     url_params(par, session)
   })
   
-  # prepare element for pining
-  ds_v <- reactive({
+  # prepare element for pining (for htmlwidgets or ggplots)
+  ds_v <- eventReactive(input$`download_data_button-modal_form-form_button`, {
     req(rctbl()$result)
-    dspins_user_board_connect(url_par()$inputs$user_name)
-    Sys.setlocale(locale = "en_US.UTF-8")
-    nm <-input$`download_data_button-modal_form-name`
+    nm <- input$`download_data_button-modal_form-name`
     if (!nzchar(input$`download_data_button-modal_form-name`)) {
       nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
       updateTextInput(session, "download_data_button-modal_form-name", value = nm)
@@ -229,14 +227,22 @@ server <- function(input, output, session) {
           category = input$`download_data_button-modal_form-category`)
   })
   
+  # función con user board connect y set locale
+  pin_ <- function(x, bkt, ...) {
+    x <- dsmodules:::eval_reactives(x)
+    bkt <- dsmodules:::eval_reactives(bkt)
+    dspins_user_board_connect(bkt)
+    Sys.setlocale(locale = "en_US.UTF-8")
+    pin(x, bucket_id = bkt)
+  }
   
   # descargas
   observe({
     downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
-                     modalFunction = pin, ds_v(),
-                     bucket_id = url_par()$inputs$user_name)
+                     errorMessage = "There has been a problem; try again later.",
+                     modalFunction = pin_, reactive(ds_v()),
+                     bkt = url_par()$inputs$user_name)
   })
-  # callModule(downloadHtmlwidget, "download_data _button", widget = reactive(rctbl()$result), name = "table", formats = c("link", "html"))
   
 }
 
