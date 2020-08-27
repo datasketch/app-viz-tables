@@ -206,41 +206,37 @@ server <- function(input, output, session) {
   })
   
   # url params
-  par <- list(user_name = "brandon", org_name = NULL, u = 2)
+  par <- list(user_name = "brandon", org_name = NULL)
   url_par <- reactive({
     url_params(par, session)
   })
   
   # prepare element for pining (for htmlwidgets or ggplots)
-  ds_v <- eventReactive(input$`download_data_button-modal_form-form_button`, {
-    req(rctbl()$result)
+  # función con user board connect y set locale
+  pin_ <- function(x, bkt, ...) {
+    x <- dsmodules:::eval_reactives(x)
+    bkt <- dsmodules:::eval_reactives(bkt)
     nm <- input$`download_data_button-modal_form-name`
     if (!nzchar(input$`download_data_button-modal_form-name`)) {
       nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
       updateTextInput(session, "download_data_button-modal_form-name", value = nm)
     } 
-    dsviz(rctbl()$result,
-          name = nm,
-          description = input$`download_data_button-modal_form-description`,
-          license = input$`download_data_button-modal_form-license`,
-          tags = input$`download_data_button-modal_form-tags`,
-          category = input$`download_data_button-modal_form-category`)
-  })
-  
-  # función con user board connect y set locale
-  pin_ <- function(x, bkt, ...) {
-    x <- dsmodules:::eval_reactives(x)
-    bkt <- dsmodules:::eval_reactives(bkt)
+    dv <- dsviz(x,
+                name = nm,
+                description = input$`download_data_button-modal_form-description`,
+                license = input$`download_data_button-modal_form-license`,
+                tags = input$`download_data_button-modal_form-tags`,
+                category = input$`download_data_button-modal_form-category`)
     dspins_user_board_connect(bkt)
     Sys.setlocale(locale = "en_US.UTF-8")
-    pin(x, bucket_id = bkt)
+    pin(dv, bucket_id = bkt)
   }
   
   # descargas
   observe({
     downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
                      errorMessage = "There has been a problem; try again later.",
-                     modalFunction = pin_, reactive(ds_v()),
+                     modalFunction = pin_, reactive(req(rctbl()$result)),
                      bkt = url_par()$inputs$user_name)
   })
   
