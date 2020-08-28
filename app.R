@@ -220,7 +220,7 @@ server <- function(input, output, session) {
     if (!nzchar(input$`download_data_button-modal_form-name`)) {
       nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
       updateTextInput(session, "download_data_button-modal_form-name", value = nm)
-    } 
+    }
     dv <- dsviz(x,
                 name = nm,
                 description = input$`download_data_button-modal_form-description`,
@@ -235,8 +235,8 @@ server <- function(input, output, session) {
   # descargas
   observe({
     downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
-                     errorMessage = "There has been a problem; try again later.",
-                     modalFunction = pin_, reactive(req(rctbl()$result)),
+                     errorMessage = i_("gl_error", lang()),
+                     modalFunction = pin_, reactive(rctbl()$result),
                      bkt = url_par()$inputs$user_name)
   })
   

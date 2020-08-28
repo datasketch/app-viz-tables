@@ -59,6 +59,7 @@ gl_category: Categorias
 gl_save: Salvar no dslibrary
 gl_url: URL
 gl_iframe: Copiar para incorporar
+gl_error: Houve um problema; tente novamente mais tarde.
 numbers: Números
 simple: Simples
 jump: Salto
