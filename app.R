@@ -13,7 +13,6 @@ library(homodatum)
 
 # unidades (width, height pixeles)
 
-
 ui <- panelsPage(useShi18ny(),
                  showDebug(),
                  panel(title = ui_("upload_data"),
@@ -98,7 +97,7 @@ server <- function(input, output, session) {
     names(ch0) <- i_(ch0, lang())
     ch1 <- as.character(parmesan$size$inputs[[3]]$input_params$choices)
     names(ch1) <- i_(ch1, lang())
-    
+    print("RRET")
     updateRadioButtons(session, "page_type", choices = ch0, selected = input$page_type)
     updateRadioButtons(session, "full_width", choices = ch1, selected = input$full_width)
   })
@@ -124,10 +123,12 @@ server <- function(input, output, session) {
     }
     if (sum(input$hyperlink) > 0) {
       hlink <- function(value, index, name) {
-        if (grepl("^www\\.|^http(s|)://", dt()[index, name])) {
-          shiny::tags$a(href = value, target = "_blank", value)
-        } else {
-          value
+        if (!is.null(dt()[index, name])) {
+          if (grepl("^www\\.|^http(s|)://", dt()[index, name])) {
+            shiny::tags$a(href = value, target = "_blank", value)
+          } else {
+            value
+          }
         }
       }
     } else {

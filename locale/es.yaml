@@ -70,3 +70,4 @@ styles: Estilos
 color_header: Color fondo títulos
 font_color_header: Color texto títulos
 hyperlink: URLs como hipervínculos
+info_hk: Celdas que empiezen por http, https o www serán hipervínculos que lleven a la página web

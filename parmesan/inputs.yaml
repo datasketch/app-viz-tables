@@ -53,7 +53,7 @@ hyperlink:
     text: info_hk
 height:
   show: true
-  input_type: numericInput
+  input_type: numberInput
   input_params:
     label: height
     min: 1
@@ -185,12 +185,13 @@ page_type:
       - simple
       Jump:
       - jump
+    selected: numbers
 page_size:
   show: true
   show_if: 
     show_pagination:
       equals: true
-  input_type: numericInput
+  input_type: numberInput
   input_params:
     label: page_size
     min: 0
