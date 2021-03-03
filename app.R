@@ -183,7 +183,9 @@ server <- function(input, output, session) {
     mb <- list(textInput("name", i_("gl_name", lang())),
                textInput("description", i_("gl_description", lang())),
                selectInput("license", i_("gl_license", lang()), choices = c("CC0", "CC-BY")),
-               selectizeInput("tags", i_("gl_tags", lang()), choices = list("No tag" = "no-tag"), multiple = TRUE, options = list(plugins= list('remove_button', 'drag_drop'))),
+               textInput("source_title", sourceLabel, value = "", placeholder = sourceTitleLabel),
+               textInput("source_path", " ", value = "", placeholder = sourcePathLabel),
+               shinyinvoer::chipsInput(inputId = "tags", label = tagsLabel, placeholder = tagsPlaceholderLabel),
                selectizeInput("category", i_("gl_category", lang()), choices = list("No category" = "no-category")))
     downloadDsUI("download_data_button", dropdownLabel = lb, text = dw, formats = "html",
                  display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl, modalBody = mb,
@@ -214,23 +216,35 @@ server <- function(input, output, session) {
   
   # prepare element for pining (for htmlwidgets or ggplots)
   # función con user board connect y set locale
-  pin_ <- function(x, bkt, ...) {
+  pin_ <- function(x, user_name, org_name, ...) {
+    
     x <- dsmodules:::eval_reactives(x)
-    bkt <- dsmodules:::eval_reactives(bkt)
+    
+    user_name <- dsmodules:::eval_reactives(user_name)
+    org_name <- dsmodules:::eval_reactives(org_name)
+    
     nm <- input$`download_data_button-modal_form-name`
     if (!nzchar(input$`download_data_button-modal_form-name`)) {
       nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
       updateTextInput(session, "download_data_button-modal_form-name", value = nm)
     }
+    
+    tags <- input$`download_data_button-modal_form-tags`
+    if(!is.null(tags)){
+      if(length(tags) == 1){
+        tags <- list(tags)
+      }
+    }
     dv <- dsviz(x,
                 name = nm,
                 description = input$`download_data_button-modal_form-description`,
+                source = list(list(title = input$`download_data_button-modal_form-source_title`,
+                                   path = input$`download_data_button-modal_form-source_path`)), 
                 license = input$`download_data_button-modal_form-license`,
-                tags = input$`download_data_button-modal_form-tags`,
+                tags = tags,
                 category = input$`download_data_button-modal_form-category`)
-    dspins_user_board_connect(bkt)
     Sys.setlocale(locale = "en_US.UTF-8")
-    pin(dv, bucket_id = bkt)
+    pins <- dspin_urls(element = dv, user_name = user_name, org_name = org_name, bucket_id = "user")
   }
   
   # descargas
@@ -238,7 +252,8 @@ server <- function(input, output, session) {
     downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
                      errorMessage = i_("gl_error", lang()),
                      modalFunction = pin_, reactive(rctbl()$result),
-                     bkt = url_par()$inputs$user_name)
+                     user_name = url_par()$inputs$user_name,
+                     org_name = url_par()$inputs$user_name)
   })
   
 }
