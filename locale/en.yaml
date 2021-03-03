@@ -47,19 +47,6 @@ show_page_info: Show page info
 page_size_control: Page size control
 page_size: Rows per page
 page_type: Pagination type
-download_table: Download table
-download: Download
-get_link: Get link
-gl_name: Name
-gl_slug: Slug
-gl_description: Description
-gl_license: License
-gl_tags: Tags
-gl_category: Category
-gl_save: Save in dslibrary
-gl_url: URL
-gl_iframe: Copy to embed
-gl_error: There has been a problem; try again later.
 numbers: Numbers
 simple: Simple
 jump: Jump
@@ -71,3 +58,21 @@ color_header: Headers background
 font_color_header: Headers text color
 hyperlink: URLs as hyperlinks
 info_hk: Cells that start with http, https or www will be hyperlinks to the website
+download_table: Download table
+download: Download
+get_link: Save / Publish
+gl_name: Name
+gl_slug: Slug
+gl_description: Description
+gl_source: Source
+gl_source_name: Name
+gl_source_path: URL
+gl_license: License
+gl_tags: Tags
+gl_type_tags: Type tag(s) and press enter after each one
+gl_category: Category
+gl_no_category: No category
+gl_save: Save in dslibrary
+gl_iframe: Copy to embed
+gl_url: URL
+gl_error: There has been a problem; try again later.

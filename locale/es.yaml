@@ -47,19 +47,6 @@ show_page_info: Mostrar información de página
 page_size_control: Control filas por página
 page_size: Número de filas por página
 page_type: Tipo de paginación
-download_table: Descargar tabla
-download: Descargar
-get_link: Obtener enlace
-gl_name: Nombre
-gl_slug: Slug
-gl_description: Descripción
-gl_license: Licencia
-gl_tags: Etiquetas
-gl_category: Categorías
-gl_save: Guardar en dslibrary
-gl_url: URL
-gl_iframe: Copiar para embeber
-gl_error: Ha habido un problema; inténtelo de nuevo en unos momentos.
 numbers: Números
 simple: Simple
 jump: Salto
@@ -71,3 +58,21 @@ color_header: Color fondo títulos
 font_color_header: Color texto títulos
 hyperlink: URLs como hipervínculos
 info_hk: Celdas que empiezen por http, https o www serán hipervínculos que lleven a la página web
+download_table: Descargar tabla
+download: Descargar
+get_link: Guardar / Publicar
+gl_name: Nombre
+gl_slug: Slug
+gl_description: Descripción
+gl_source: Fuente
+gl_source_name: Título
+gl_source_path: URL
+gl_license: Licencia
+gl_tags: Etiquetas
+gl_type_tags: Presiona enter para agregar cada etiqueta
+gl_category: Categorías
+gl_no_category: Sin categoría
+gl_save: Guardar en dslibrary
+gl_iframe: Copiar para embeber
+gl_url: URL
+gl_error: Ha habido un problema; inténtalo de nuevo en unos momentos.

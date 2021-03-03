@@ -136,7 +136,7 @@ server <- function(input, output, session) {
     }
     st <- paste0("color: ", input$color, "; font-family: ", input$font_family, "; font-size: ", input$font_size, "px;")# font-weight: bold;")
     safe_reactable <- purrr::safely(reactable)
-    safe_reactable(dt(),
+    reactable::reactable(dt(),
                    
                    height = input$height,
                    fullWidth = ifelse(input$full_width == "full_width", TRUE, FALSE),
@@ -176,84 +176,67 @@ server <- function(input, output, session) {
                    style = st)
   })
   
-  output$download <- renderUI({
-    lb <- i_("download_table", lang())
-    dw <- i_("download", lang())
-    gl <- i_("get_link", lang())
-    mb <- list(textInput("name", i_("gl_name", lang())),
-               textInput("description", i_("gl_description", lang())),
-               selectInput("license", i_("gl_license", lang()), choices = c("CC0", "CC-BY")),
-               textInput("source_title", sourceLabel, value = "", placeholder = sourceTitleLabel),
-               textInput("source_path", " ", value = "", placeholder = sourcePathLabel),
-               shinyinvoer::chipsInput(inputId = "tags", label = tagsLabel, placeholder = tagsPlaceholderLabel),
-               selectizeInput("category", i_("gl_category", lang()), choices = list("No category" = "no-category")))
-    downloadDsUI("download_data_button", dropdownLabel = lb, text = dw, formats = "html",
-                 display = "dropdown", dropdownWidth = 170, getLinkLabel = gl, modalTitle = gl, modalBody = mb,
-                 modalButtonLabel = i_("gl_save", lang()), modalLinkLabel = i_("gl_url", lang()), modalIframeLabel = i_("gl_iframe", lang()),
-                 modalFormatChoices = c("HTML" = "html", "PNG" = "png"))
-  })
-  
-  # renderizando reactable
   output$result <- renderUI({
     res <- rctbl()
-    if (is.null(res$result)) {
-      infomessage(p(res$error$message))
-    } else {
+    # if (is.null(res$result)) {
+    #   infomessage(p(res$error$message))
+    # } else {
       reactableOutput("result_table", height = "61vh")
-    }
+    # }
   })
   
   output$result_table <- renderReactable({
     req(rctbl())
-    rctbl()$result
+    rctbl()
   })
   
-  # url params
-  par <- list(user_name = "brandon", org_name = NULL)
+  output$download <- renderUI({
+    
+    downloadDsUI("download_data_button",
+                 display = "dropdown",
+                 formats = c("html"),
+                 dropdownWidth = 170,
+                 modalFormatChoices = c("HTML" = "html", "PNG" = "png"),
+                 text = i_("download", lang()), 
+                 dropdownLabel = i_("download", lang()), 
+                 getLinkLabel = i_("get_link", lang()), 
+                 modalTitle = i_("get_link", lang()), 
+                 modalButtonLabel = i_("gl_save", lang()), 
+                 modalLinkLabel = i_("gl_url", lang()), 
+                 modalIframeLabel = i_("gl_iframe", lang()),
+                 nameLabel = i_("gl_name", lang()),
+                 descriptionLabel = i_("gl_description", lang()),
+                 sourceLabel = i_("gl_source", lang()),
+                 sourceTitleLabel = i_("gl_source_name", lang()),
+                 sourcePathLabel = i_("gl_source_path", lang()),
+                 licenseLabel = i_("gl_license", lang()),
+                 tagsLabel = i_("gl_tags", lang()),
+                 tagsPlaceholderLabel = i_("gl_type_tags", lang()),
+                 categoryLabel = i_("gl_category", lang()),
+                 categoryChoicesLabels = i_("gl_no_category", lang())
+    )
+  })
+  
+  par <- list(user_name = "test", org_name = NULL)
   url_par <- reactive({
     url_params(par, session)
   })
-  
-  # prepare element for pining (for htmlwidgets or ggplots)
-  # función con user board connect y set locale
-  pin_ <- function(x, user_name, org_name, ...) {
-    
-    x <- dsmodules:::eval_reactives(x)
-    
-    user_name <- dsmodules:::eval_reactives(user_name)
-    org_name <- dsmodules:::eval_reactives(org_name)
-    
-    nm <- input$`download_data_button-modal_form-name`
-    if (!nzchar(input$`download_data_button-modal_form-name`)) {
-      nm <- paste0("saved", "_", gsub("[ _:]", "-", substr(as.POSIXct(Sys.time()), 1, 19)))
-      updateTextInput(session, "download_data_button-modal_form-name", value = nm)
-    }
-    
-    tags <- input$`download_data_button-modal_form-tags`
-    if(!is.null(tags)){
-      if(length(tags) == 1){
-        tags <- list(tags)
-      }
-    }
-    dv <- dsviz(x,
-                name = nm,
-                description = input$`download_data_button-modal_form-description`,
-                source = list(list(title = input$`download_data_button-modal_form-source_title`,
-                                   path = input$`download_data_button-modal_form-source_path`)), 
-                license = input$`download_data_button-modal_form-license`,
-                tags = tags,
-                category = input$`download_data_button-modal_form-category`)
-    Sys.setlocale(locale = "en_US.UTF-8")
-    pins <- dspin_urls(element = dv, user_name = user_name, org_name = org_name, bucket_id = "user")
-  }
-  
-  # descargas
+
+
   observe({
-    downloadDsServer("download_data_button", element = reactive(rctbl()$result), formats = "html",
+    req(rctbl())
+    # browser()
+    user_name <- url_par()$inputs$user_name
+    org_name <- url_par()$inputs$org_name
+    if (is.null(user_name) & is.null(user_name)) return()
+    downloadDsServer(id = "download_data_button",
+                     element = reactive(rctbl()),
+                     formats = c("html"),
                      errorMessage = i_("gl_error", lang()),
-                     modalFunction = pin_, reactive(rctbl()$result),
-                     user_name = url_par()$inputs$user_name,
-                     org_name = url_par()$inputs$user_name)
+                     type = "dsviz",
+                     user_name = user_name,
+                     org_name = org_name)
+
   })
   
 }
