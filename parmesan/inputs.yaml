@@ -3,11 +3,8 @@ font_family:
   input_type: selectizeInput
   input_params:
     label: font_family
-    choices:
-      - Liberation Sans Narrow
-      - Sawasdee
-      - Segoe UI
-    selected: Liberation Sans Narrow
+    choices: fontFamily_choices()
+    selected: fontFamily_opts()
 font_size:
   show: true
   input_type: sliderInput
@@ -23,8 +20,7 @@ color:
   input_params:
     label: color
     colors:
-      #- "#414141" 
-      - "#50585D"
+      - fontColor_opts()
     max_colors: 1
 color_header:
   show: true
@@ -32,7 +28,7 @@ color_header:
   input_params:
     label: color_header
     colors:
-      - "#E2EAED"
+      - default_header_background()
     max_colors: 1
 font_color_header:
   show: true
@@ -40,7 +36,7 @@ font_color_header:
   input_params:
     label: font_color_header
     colors:
-      - "#8097A4"
+      - titleColor_opts()
     max_colors: 1
 hyperlink:
   show: true

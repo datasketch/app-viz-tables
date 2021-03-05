@@ -5,16 +5,54 @@ library(shi18ny)
 library(V8)
 library(dsmodules)
 library(dspins)
+library(dsthemer)
 library(hotr)
 library(tidyverse)
 library(reactable)
 library(shinycustomloader)
 library(homodatum)
 
+library(htmlwidgets)
+
+# define function to help apply custom css
+#  to htmlwidgets using css specificity with id
+style_widget <- function(hw=NULL, style="", addl_selector="") {
+  stopifnot(!is.null(hw), inherits(hw, "htmlwidget"))
+  
+  # use current id of htmlwidget if already specified
+  elementId <- hw$elementId
+  if(is.null(elementId)) {
+    # borrow htmlwidgets unique id creator
+    elementId <- sprintf(
+      'htmlwidget-%s',
+      htmlwidgets:::createWidgetId()
+    )
+    hw$elementId <- elementId
+  }
+  
+  htmlwidgets::prependContent(
+    hw,
+    htmltools::tags$style(
+      sprintf(
+        "#%s %s {%s}",
+        elementId,
+        addl_selector,
+        style
+      )
+    )
+  )
+}
+
+styles <- "
+   
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+"
 # unidades (width, height pixeles)
 
 ui <- panelsPage(useShi18ny(),
                  showDebug(),
+                 styles = styles,
                  panel(title = ui_("upload_data"),
                        width = 200,
                        body = uiOutput("table_input")),
@@ -31,7 +69,6 @@ ui <- panelsPage(useShi18ny(),
                        can_collapse = FALSE,
                        body = div(langSelectorInput("lang", position = "fixed"),
                                   withLoader(uiOutput("result"), type = "image", loader = "loading_gris.gif"))))
-
 
 
 server <- function(input, output, session) {
@@ -81,6 +118,52 @@ server <- function(input, output, session) {
     suppressWarnings(hotr("hotr_input", data = inputData(), order = NULL, options = list(height = "86vh"), enableCTypes = FALSE))
   })
   
+  theme_load <- reactive({
+    theme_select <- "light"
+    orgName <- url_par()$inputs$org_name %||% "public"
+    if (!orgName %in% dsthemer::dsthemer_list()) orgName <- "public"
+    th <- dsthemer_get(orgName, theme = theme_select)
+    if (is.null(th)) return()
+    th
+  })
+  
+  fontFamily_choices <- reactive({
+    req(theme_load())
+    c(theme_load()$text_family, "Liberation Sans Narrow", "Sawasdee", "Segoe UI")
+  })
+  
+  fontFamily_opts <- reactive({
+    req(theme_load())
+    theme_load()$text_family
+  })
+  
+  fontColor_opts <- reactive({
+    req(theme_load())
+    theme_load()$text_color
+  })
+  
+  titleColor_opts <- reactive({
+    req(theme_load())
+    theme_load()$title_color
+  })
+  
+  agg_palette <- reactive({
+    req(theme_load())
+    colors <- theme_load()$palette_colors
+    colors
+  })
+  
+  default_header_background <- reactive({
+    req(agg_palette())
+    agg_palette()[1]
+  })
+  
+  cols_nms <- reactive({
+    req(dt())
+    names(dt())
+  })
+  
+  
   path <- "parmesan"
   parmesan <- parmesan_load(path)
   parmesan_input <- parmesan_watch(input, parmesan)
@@ -107,13 +190,9 @@ server <- function(input, output, session) {
     hotr_table(input$hotr_input)
   })
   
-  cols_nms <- reactive({
-    req(dt())
-    names(dt())
-  })
-  
   rctbl <- reactive({
     req(dt())
+    
     sl <- NULL
     if (sum(input$selection) > 0) 
       sl <- "multiple"
